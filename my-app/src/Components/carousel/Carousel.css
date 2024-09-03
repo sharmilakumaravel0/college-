@@ -1,0 +1,46 @@
+/* src/components/Carousel.css */
+
+/* Carousel container styles */
+.carousel {
+    position: relative;
+    width: 200%; /* Adjust the width as needed */
+    max-width: 800px; /* Maximum width of the carousel */
+    margin: 30px auto; /* Center the carousel horizontally */
+    overflow: hidden; /* Hide overflowing content */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual depth */
+}
+
+/* Carousel images container */
+.carousel-images {
+    display: flex; /* Align images horizontally */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slide change */
+}
+
+/* Individual carousel images */
+.carousel-image {
+    width: 100%; /* Each image takes full width of carousel */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Carousel control buttons */
+.carousel-control {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100; /* Ensure buttons are above other content */
+}
+
+.carousel-control.left {
+    left: 10px; /* Position left control */
+}
+
+.carousel-control.right {
+    right: 10px; /* Position right control */
+}

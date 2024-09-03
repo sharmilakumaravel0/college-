@@ -1,0 +1,67 @@
+/* Event Section Styles */
+.dis {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #c00;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
+}
+
+/* About Section Styles */
+.Des {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #c00;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
+}
+
+/* Contact Section Styles */
+.Dis {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #c00;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
+}
+
+.Des:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dis:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.Dis:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

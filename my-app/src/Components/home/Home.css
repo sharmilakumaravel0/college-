@@ -1,0 +1,41 @@
+/* Home Section Styles */
+section#home {
+    margin-top: 2rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    border: 2px solid #c00;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000;
+}
+
+.description:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.he{
+    color:#000
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: linear-gradient(90deg, #c00, #900);
+    margin: 0.5rem auto;
+    border-radius: 2px;
+    animation: scaleIn 1s ease-in-out;
+}

@@ -1,0 +1,187 @@
+/* src/components/Login.css */
+
+/* Resetting margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Body styles */
+.BACK {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif; /* Default font */
+    background: linear-gradient(135deg, #f2f2f2, #e6e6e6); /* Subtle gradient background */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container styles */
+.container2 {
+    display: flex; /* Flexbox for two columns */
+    width: 60%;
+    max-width: 900px; /* Increased max width for larger screens */
+    background-color: white; /* Background color for the container */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    overflow: hidden; /* To keep the corners rounded */
+    animation: slideUp 1s ease-out; /* Slide-up animation */
+    position: relative; /* For the background gradient */
+    background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Subtle background gradient */
+}
+
+/* Image section styles */
+.image-section {
+    flex: 1; /* Takes up half of the container */
+    position: relative; /* For positioning overlay */
+    overflow: hidden; /* To keep the image clipped */
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire image section */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.image-section:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Form section styles */
+.form-section {
+    flex: 1; /* Takes up half of the container */
+    padding: 30px; /* Padding around the form */
+    text-align: center; /* Center text alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 20px;
+    color: #333; /* Dark gray color for the heading */
+    font-size: 2rem; /* Larger font size */
+    font-weight: 700; /* Bold font weight */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    animation: slideIn 1s ease-out; /* Slide-in animation */
+}
+
+/* Input group styles */
+.input-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    position: relative; /* For positioning icons */
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Medium gray color for labels */
+    font-weight: bold; /* Bold labels */
+    position: relative; /* Position label absolutely */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 30px; /* Added left padding for icon spacing */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.6); /* Light transparent background for inputs */
+    position: relative; /* For placing icons */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth shadow and border color transition */
+}
+
+/* Hover effect for input boxes */
+.input-group input:hover,
+.input-group input:focus {
+    border-color: #d10000; /* Red border color on hover */
+    box-shadow: 0 0 8px rgba(209, 0, 0, 0.3); /* Red glow effect on hover */
+}
+
+/* Icon styles */
+.input-group i {
+    position: absolute;
+    top: 50%; /* Center icons vertically */
+    left: 10px; /* Left position for icons */
+    color: #999; /* Light gray color for icons */
+    transform: translateY(-50%); /* Center icons vertically */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.input-group input:focus + i {
+    color: #d10000; /* Icon color change to red on focus */
+}
+
+/* Button group styles */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 48%; /* Ensure buttons are side by side */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #d10000; /* Red color for buttons */
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #a70000; /* Darker red on hover */
+    transform: scale(1.05); /* Slight lift effect on hover */
+}
+
+/* Reset button specific styles */
+.reset-btn {
+    background-color: #d10000; /* Same red color for reset button */
+}
+
+.reset-btn:hover {
+    background-color: #a70000; /* Darker red on hover */
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

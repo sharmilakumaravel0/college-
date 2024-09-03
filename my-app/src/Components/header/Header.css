@@ -1,0 +1,101 @@
+/* Header Styles */
+header {
+    background: linear-gradient(45deg, #c00, #900);
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color:white
+}
+;
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background: #900;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #c00;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+nav ul ul li {
+    width: 200px;
+}
+
+nav ul ul li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    white-space: nowrap;
+}
+
+nav ul ul li a:hover {
+    background: #900;
+}
+
+nav ul li:hover > ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-login {
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.nav-login:hover {
+    background: #ff9900;
+    color: #fff;
+    transform: scale(1.1);
+}
+

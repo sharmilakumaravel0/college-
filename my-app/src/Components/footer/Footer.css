@@ -1,0 +1,11 @@
+/* Footer Styles */
+.footer-bottom {
+    margin-top:40px;
+    background: linear-gradient(45deg, #c00, #900);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
