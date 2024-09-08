@@ -1,0 +1,59 @@
+/* Styling for the events-info section */
+.events-info {
+    background-color: #ffe5e5;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.events-info h3 {
+    font-size: 1.6em;
+    color: #b71c1c;
+    margin-bottom: 15px;
+}
+
+.events-info p {
+       color: #333;font-size: 1.1em;
+ 
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Keyframes for slideIn animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Styling for the horizontal line */
+.section-divider {
+    position: relative;
+    margin: 40px 0;
+}
+
+.section-divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #b71c1c;
+    margin: 0 auto;
+    width: 80%;
+    animation: lineGrow 1s ease-in-out;
+}
+
+/* Keyframes for lineGrow animation */
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}

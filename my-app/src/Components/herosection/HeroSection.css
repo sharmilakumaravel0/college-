@@ -1,0 +1,35 @@
+.hero {
+    background: url('https://via.placeholder.com/1600x600?text=Hero+Image') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+}
+
+.heroContent h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.heroContent p {
+  
+    font-size: 1.2em;
+    color: #000;
+    margin: 20px 0;
+    
+}
+
+.heroButton {
+    background-color: #b71c1c;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.heroButton:hover {
+    background-color: #a31b1b;
+}

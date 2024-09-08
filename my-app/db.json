@@ -1,0 +1,34 @@
+{
+    "admins": [
+      {
+        "id": 1,
+        "username": "admin1",
+        "password": "password123"
+      },
+      {
+        "id": 2,
+        "username": "admin2",
+        "password": "admin456"
+      }
+    ],
+    "students": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "age": 21,
+        "email": "john.doe@example.com",
+        "course": "Computer Science",
+        "registrationDate": "2023-09-01"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "age": 22,
+        "email": "jane.smith@example.com",
+        "course": "Electrical Engineering",
+        "registrationDate": "2023-09-01"
+      }
+    
+    ]
+  }
+  

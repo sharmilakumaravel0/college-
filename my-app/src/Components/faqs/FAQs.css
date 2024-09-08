@@ -1,0 +1,38 @@
+.m{
+    background-image: url("https://png.pngtree.com/background/20220716/original/pngtree-color-marathon-sports-publicity-background-picture-image_1630725.jpg");background-repeat: no-repeat;
+    background-size: cover;
+}
+.faqs {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.faqs h2 {
+    font-size: 2em;
+    color: #b71c1c;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background-color: #ffe5e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 15px;
+    text-align: left;
+}
+
+.faq-item h4 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #b71c1c;
+}
+
+.faq-item p {
+    margin: 5px 0;
+}
+.faq-item:hover{
+transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}

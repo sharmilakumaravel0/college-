@@ -3,12 +3,16 @@
 /* Carousel container styles */
 .carousel {
     position: relative;
-    width: 200%; /* Adjust the width as needed */
-    max-width: 800px; /* Maximum width of the carousel */
+    width: 100%; /* Adjust the width as needed */
+    max-width: 500px; /* Maximum width of the carousel */
     margin: 30px auto; /* Center the carousel horizontally */
     overflow: hidden; /* Hide overflowing content */
     border-radius: 8px; /* Optional: rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual depth */
+}
+.s{
+    text-align: center;
+    color: #b71c1c;
 }
 
 /* Carousel images container */
@@ -44,3 +48,28 @@
 .carousel-control.right {
     right: 10px; /* Position right control */
 }
+.section-divider {
+    position: relative;
+    margin: 40px 0;
+}
+
+.section-divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #b71c1c;
+    margin: 0 auto;
+    width: 80%;
+    animation: lineGrow 1s ease-in-out;
+}
+
+/* Keyframes for lineGrow animation */
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+

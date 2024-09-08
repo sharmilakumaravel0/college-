@@ -1,20 +1,37 @@
 /* Header Styles */
-header {
+.v {
     background: linear-gradient(45deg, #c00, #900);
-    color: #ffffff;
+    color: #ff0000;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.logo-link {
+    text-decoration: none;
+  }
+.logo {
+    border-radius: 50%;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-image {
+    width: 100%;
+    height: auto;
+  }
 
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color:white
+    text-align: left;
+    color:rgb(255, 255, 255)
 }
-;
+
 nav {
     position: relative;
 }
@@ -24,6 +41,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: end;
     gap: 1.5rem;
     transition: transform 0.3s ease;
 }
@@ -33,7 +51,7 @@ nav ul li {
 }
 
 nav a {
-    color: #fff;
+    color: #fefdfd;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;

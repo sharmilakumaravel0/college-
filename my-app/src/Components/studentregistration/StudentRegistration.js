@@ -1,5 +1,6 @@
 import React from 'react';
-import Footer from '../footer/Footer';
+import Header from '../header/Header';
+
 
 
 const StudentRegistration = () => {
@@ -19,7 +20,9 @@ const StudentRegistration = () => {
     };
 
     return (
+    
         <>
+      
         <div className='back'>  
         <div className="container1">
             <h1>Student Registration</h1>
@@ -100,7 +103,7 @@ const StudentRegistration = () => {
             </form>
         </div>
       </div>
-      <Footer/>
+   
         </>
     
     );

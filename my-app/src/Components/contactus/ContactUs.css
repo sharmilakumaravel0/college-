@@ -8,13 +8,13 @@
     align-items: center;
     min-height: 100vh;
     overflow: hidden; /* Prevent scrollbars */
-   
+    background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-blue-sky-picture-image_1113901.jpg");
     background-size: cover;
   }
   
   .container4 {
     display: flex;
-    width: 60%;
+    width: 300%;
     max-width: 500px;
     margin: 20px;
     background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */

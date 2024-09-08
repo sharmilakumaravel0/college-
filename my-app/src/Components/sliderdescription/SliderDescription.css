@@ -1,0 +1,100 @@
+/* Styling for the slider-description section */
+.slider-description {
+    background-color: #ffe5e5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; /* Center text and list items horizontally */
+    margin: 20px auto; /* Center the section horizontally */
+    max-width: 600px; /* Adjust the width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual depth */
+    animation: fadeInUp 1s ease-in-out; /* Animation for the entire section */
+}
+
+/* Styling for the heading */
+.slider-description h2 {
+    font-size: 1.8em;
+    color: #b71c1c;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out; /* Animation for the heading */
+}
+
+/* Styling for the unordered list */
+.slider-description ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to center list items */
+    flex-direction: column; /* Stack list items vertically */
+    align-items: flex-start; /* Align list items to the start */
+    max-width: 100%; /* Ensure the list items fit within the container */
+}
+
+/* Styling for each list item */
+.slider-description li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    position: relative; /* Required for the before pseudo-element */
+    animation: fadeInUp 1s ease-in-out; /* Animation for each list item */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Set text color to black */
+    padding-left: 30px; /* Add padding to ensure space for the bullet */
+}
+
+/* Custom black bullet styling */
+.slider-description li:before {
+    content: '• ';
+    color: black; /* Set bullet color to black */
+    font-weight: bold;
+    position: absolute;
+    left: 0; /* Align bullet to the start of the padding */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for the horizontal line */
+.section-divider {
+    position: relative;
+    margin: 40px 0;
+}
+
+.section-divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #b71c1c;
+    margin: 0 auto;
+    width: 80%;
+    animation: lineGrow 1s ease-in-out;
+}
+
+/* Keyframes for lineGrow animation */
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}

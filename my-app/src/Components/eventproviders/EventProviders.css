@@ -1,0 +1,47 @@
+.event-provides {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.event-provides h2 {
+    font-size: 2em;
+    color: #b71c1c;
+    margin-bottom: 20px;
+}
+
+.event-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.event-item {
+    width: 160px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.event-item p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #b71c1c;
+    font-weight: bold;
+}
+
+.event-item .description {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}

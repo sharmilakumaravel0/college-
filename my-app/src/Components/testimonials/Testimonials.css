@@ -1,0 +1,64 @@
+.i{
+    background-image: url("https://png.pngtree.com/background/20220716/original/pngtree-color-marathon-sports-publicity-background-picture-image_1630725.jpg");background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    color: #b71c1c;
+    margin-bottom: 20px;
+}
+
+.testimonial-card {
+    background-color: #ffe5e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 15px;
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.testimonial-card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.section-divider {
+    position: relative;
+    margin: 40px 0;
+}
+
+.section-divider::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #b71c1c;
+    margin: 0 auto;
+    width: 80%;
+    animation: lineGrow 1s ease-in-out;
+}
+
+/* Keyframes for lineGrow animation */
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}

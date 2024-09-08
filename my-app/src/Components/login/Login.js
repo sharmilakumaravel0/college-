@@ -1,7 +1,7 @@
-// src/components/Login.js
 import React, { useState } from 'react';
-import './Login.css';
+
 import Footer from '../footer/Footer';
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -19,6 +19,7 @@ const Login = () => {
 
     return (
         <>
+        
         <div className='BACK'>
         <div className="container2">
             {/* Left side image */}

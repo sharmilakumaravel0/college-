@@ -6,8 +6,7 @@
 
 .back {
     width:100vw;
-    height:100h;
-    
+    height:100h; 
     display:flex;
     justify-content: center;
     align-items: center;
