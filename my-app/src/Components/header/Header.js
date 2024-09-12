@@ -8,7 +8,7 @@ const Header = () => {
       <Link to="/adminlogin" className="logo-link">
           <div className="logo">
             <img 
-              src="https://st2.depositphotos.com/4398873/9234/v/450/depositphotos_92345772-stock-illustration-education-logo-concept.jpg" 
+              src="https://i.pinimg.com/originals/29/4c/e0/294ce071f8296c4d4ca39af8267cc2b0.jpg" 
               alt="College Event Management Logo" 
               className="logo-image"
             />

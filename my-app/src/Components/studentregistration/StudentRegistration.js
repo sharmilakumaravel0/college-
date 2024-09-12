@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 
 
@@ -25,7 +26,7 @@ const StudentRegistration = () => {
       
         <div className='back'>  
         <div className="container1">
-            <h1>Student Registration</h1>
+            <h1>Sign Up</h1>
             <form onSubmit={validateForm}>
                 <div className="form-group">
                     <label htmlFor="full-name">Full Name:</label>
@@ -103,7 +104,7 @@ const StudentRegistration = () => {
             </form>
         </div>
       </div>
-   
+   <Footer/>
         </>
     
     );

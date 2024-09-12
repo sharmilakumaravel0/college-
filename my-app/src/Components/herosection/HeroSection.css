@@ -11,13 +11,10 @@
     margin: 0;
 }
 
-.heroContent p {
-  
-    font-size: 1.2em;
-    color: #000;
-    margin: 20px 0;
-    
+.e{
+    color:black;
 }
+
 
 .heroButton {
     background-color: #b71c1c;

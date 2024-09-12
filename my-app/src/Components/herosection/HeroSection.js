@@ -35,7 +35,7 @@ const HeroSection = () => {
         <section id="home" style={heroStyle}>
             <div className="hero-content">
                 <h1>Welcome to College Events</h1>
-                <p>Your gateway to exciting campus events and activities!</p>
+                <p className='e'><i>Your gateway to exciting campus events and activities!</i></p>
                 <button
                     style={buttonStyle}
                     onMouseOver={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor}

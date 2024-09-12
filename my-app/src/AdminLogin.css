@@ -1,10 +1,11 @@
 /* src/AdminLogin.css */
-.container {
+.a{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    background-image: url("https://img.freepik.com/free-vector/geometric-gradient-futuristic-background_23-2149116406.jpg");background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .login-form {

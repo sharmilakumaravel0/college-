@@ -21,12 +21,17 @@ import "./Components/login/Login.css"
 import "./Components/events/Events.css"
 import "./Components/herosection/HeroSection.css"
 import AdminLogin from './AdminLogin';
-import AdminDashboard from './AdminDashboard';
+import StudentDetails from './Components/StudentDetails';
 import "./Components/jobfair/JobFair.css";
 import Workshop from './Components/workshop/WorkShop';
 import Sports from './Components/sports/Sports';
 import "./Components/sports/Sports.css"
-
+import OnlineEvents from './Components/onlineevents.js/OnlineEvents';
+import RegistrationSummary from './Components/registration-summary/RegistrationSummary';
+import AdminDashboard from './Components/admindashboard/AdminDashboard';
+import Technical from './Components/technical/Technical';
+import NonTechEvents from './Components/nontech/NonTechEvents';
+import EventProvides from './Components/eventproviders/EventProviders';
 
 
 
@@ -48,18 +53,30 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/jobfair" element={<JobFair />} />
         <Route path="/workshop" element={<Workshop />} />
+        <Route path="/eventproviders" element={<EventProvides />} />
         <Route path="/sports" element={<Sports />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
-
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/registration-summary" element={<RegistrationSummary />} />
+        <Route path="/studentdetails" element={<StudentDetails />} />
+       
+        <Route path="/onlineevents" element={<OnlineEvents />} />
+        <Route path="/technical" element={<Technical/>} />
+        <Route path="/nontech" element={<NonTechEvents/>} />
+        
        
         
-        
+       
 
-       
-       
-       
       </Routes>
+       
+        
+        
+
+       
+       
+       
+
     
     </Router>
     </>

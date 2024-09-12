@@ -48,7 +48,6 @@
 .sports { background-color: #d5e037; }  /* Yellow */
 .workshops { background-color: #9b59b6; }  /* Purple */
 .job-fairs { background-color: #ff9d1d; }  /* Orange */
-.social-responsibility { background-color:  #f751d3;}  /* Pink */
 
 .box:hover {
     transform: scale(1.1);

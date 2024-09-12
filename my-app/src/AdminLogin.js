@@ -1,7 +1,9 @@
 // src/AdminLogin.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './AdminLogin.css'; // Import the CSS file
+
 
 function AdminLogin() {
   const [username, setUsername] = useState('');
@@ -12,7 +14,7 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('/path/to/data.json'); // Adjust path as needed
+    const response = await fetch('/path/to/db.json'); // Adjust path as needed
     const data = await response.json();
 
     const admin = data.admins.find(
@@ -28,6 +30,8 @@ function AdminLogin() {
   };
 
   return (
+    <>
+    <div className='a'>
     <div className="container">
       <div className="login-form">
         <h2>Admin Login</h2>
@@ -51,10 +55,12 @@ function AdminLogin() {
             />
           </div>
           {error && <p>{error}</p>}
-          <button type="submit">Login</button>
+          <button type="submit">Login<Link to="/admindashboard">AdminDashboard</Link></button>
         </form>
       </div>
     </div>
+    </div>
+    </>
   );
 }
 

@@ -14,7 +14,8 @@
     align-items: center;
     height: 100vh; /* Full viewport height */
     font-family: Arial, sans-serif; /* Default font */
-    background: linear-gradient(135deg, #f2f2f2, #e6e6e6); /* Subtle gradient background */
+    background-image:url("https://i.pinimg.com/originals/03/33/c1/0333c1e00f1b5a0cc08cfc24bbe4b156.jpg");background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden; /* Prevent scrolling */
 }
 

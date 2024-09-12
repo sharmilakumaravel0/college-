@@ -9,9 +9,9 @@ function Events() {
     <>
       <h1 className='t'>Events</h1>
       <div className="events">
-        <div className="box technical">Technical Events</div>
-        <div className="box non-technical">Non-Technical Events</div>
-        <div className="box online">Online Events</div>
+        <div className="box technical"><Link to="/technical">Technical Events</Link></div>
+        <div className="box non-technical"><Link to="/nontech">Non-Technical Events</Link></div>
+        <div className="box online"><Link to="/onlineevents">OnlineEvents</Link> </div>
         <div className="box sports">  <Link to="/sports">Sports</Link></div>
         <div className="box workshops">
           <Link to="/workshop">Workshop</Link>
@@ -19,8 +19,7 @@ function Events() {
         <div className="box job-fairs">
           <Link to="/jobfair">Job Fair</Link>
         </div>
-        <div className="box social-responsibility">Environmental & Social Responsibility Events</div>
-      </div>
+         </div>
       <Footer />
     </>
   );
