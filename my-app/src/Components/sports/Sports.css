@@ -3,7 +3,8 @@
   font-family: 'Times New Roman', serif;
   text-align: center;
   padding: 20px;
-  background-color: #f0f8ff;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/026/858/512/small_2x/of-a-colorful-assortment-of-sports-balls-on-a-white-background-with-copy-space-free-photo.jpg");background-repeat: no-repeat;
+  background-size: cover;
 }
 
 button {
@@ -11,14 +12,15 @@ button {
   margin: 10px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: #ecd716;
   color: white;
   border: none;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #d3d3d3;
+  transform: translateY(-5px);
 }
 
 .section {

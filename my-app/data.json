@@ -1,40 +1,6 @@
 {
-    "registrations": [
-      {
-        "studentName": "Alice Johnson",
-        "collegeName": "Greenwood University",
-        "studentEmail": "alice.johnson@example.com",
-        "phoneNumber": "555-1234",
-        "eventTitle": "Football"
-      },
-      {
-        "studentName": "Bob Smith",
-        "collegeName": "Lakeside College",
-        "studentEmail": "bob.smith@example.com",
-        "phoneNumber": "555-5678",
-        "eventTitle": "Basketball"
-      },
-      {
-        "studentName": "Charlie Brown",
-        "collegeName": "Riverdale Institute",
-        "studentEmail": "charlie.brown@example.com",
-        "phoneNumber": "555-8765",
-        "eventTitle": "Volleyball"
-      },
-      {
-        "studentName": "Diana Prince",
-        "collegeName": "Sunset Academy",
-        "studentEmail": "diana.prince@example.com",
-        "phoneNumber": "555-4321",
-        "eventTitle": "Cricket"
-      },
-      {
-        "studentName": "Edward Nygma",
-        "collegeName": "Metropolis University",
-        "studentEmail": "edward.ngyma@example.com",
-        "phoneNumber": "555-3456",
-        "eventTitle": "Carrom Board"
-      }
-    ]
-  }
-  
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 22,
+  "course": "Computer Science"
+}

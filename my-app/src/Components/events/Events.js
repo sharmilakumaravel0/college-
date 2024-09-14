@@ -14,7 +14,7 @@ function Events() {
         <div className="box online"><Link to="/onlineevents">OnlineEvents</Link> </div>
         <div className="box sports">  <Link to="/sports">Sports</Link></div>
         <div className="box workshops">
-          <Link to="/workshop">Workshop</Link>
+          <Link to="/workshop">workshops</Link>
         </div>
         <div className="box job-fairs">
           <Link to="/jobfair">Job Fair</Link>

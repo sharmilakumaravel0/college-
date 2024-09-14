@@ -1,74 +1,124 @@
-import React from 'react';
- // Ensure you create this CSS file for styling
+// src/Components/Workshops.js
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
-const workshops = [
-    {
-        id: 1,
-        name: "Introduction to React",
-        date: "October 15, 2024",
-        location: "Online",
-        description: "Learn the basics of React and how to build interactive web applications."
-    },
-    {
-        id: 2,
-        name: "Advanced JavaScript",
-        date: "November 10, 2024",
-        location: "New York, NY",
-        description: "Deep dive into advanced JavaScript concepts and best practices."
-    },
-    {
-        id: 3,
-        name: "Python for Data Science",
-        date: "December 5, 2024",
-        location: "San Francisco, CA",
-        description: "Explore Python libraries and tools for data analysis and visualization."
-    },
-    {
-        id: 4,
-        name: "UX/UI Design Basics",
-        date: "January 20, 2025",
-        location: "Los Angeles, CA",
-        description: "Understand the fundamentals of user experience and interface design."
-    },
-    {
-        id: 5,
-        name: "Cybersecurity Essentials",
-        date: "February 25, 2025",
-        location: "Chicago, IL",
-        description: "Learn about essential cybersecurity practices to protect your digital assets."
-    },
-    {
-        id: 6,
-        name: "Machine Learning Introduction",
-        date: "March 15, 2025",
-        location: "Boston, MA",
-        description: "Get started with machine learning concepts and techniques."
-    },
-    {
-        id: 7,
-        name: "Project Management Skills",
-        date: "April 10, 2025",
-        location: "Philadelphia, PA",
-        description: "Enhance your project management skills with practical techniques and tools."
-    }
-];
 
 function Workshops() {
-    return (
-        <div className="workshops">
-            <h1>Upcoming Workshops</h1>
-            <div className="workshop-list">
-                {workshops.map(workshop => (
-                    <div key={workshop.id} className="workshop-card">
-                        <h2>{workshop.name}</h2>
-                        <p><strong>Date:</strong> {workshop.date}</p>
-                        <p><strong>Location:</strong> {workshop.location}</p>
-                        <p><strong>Description:</strong> {workshop.description}</p>
-                    </div>
-                ))}
-            </div>
+  const [activeSection, setActiveSection] = useState('main-menu');
+  const [workshopTitle, setWorkshopTitle] = useState('');
+  const navigate = useNavigate(); // Hook for navigation
+
+  // List of colleges for the dropdown
+  const colleges = [
+    'Select your college',
+    'Indian Institute of Technology Madras (IIT Madras)',
+    'Anna University',
+    'Loyola College',
+    'Madras Christian College (MCC)',
+    'Presidency College',
+    'SRM Institute of Science and Technology',
+    'Sathyabama Institute of Science and Technology',
+    'Stella Maris College',
+    'Hindustan Institute of Technology and Science (HITS)',
+    'Vellore Institute of Technology (VIT)',
+    'Saveetha Institute of Medical and Technical Sciences'
+  ];
+
+  // Function to show different sections based on the type
+  const showWorkshops = (type) => {
+    if (type === 'technical') {
+      setActiveSection('technical-workshops-list');
+    } else if (type === 'nonTechnical') {
+      setActiveSection('non-technical-workshops-list');
+    }
+  };
+
+  // Function to show workshop details for the selected workshop
+  const showWorkshopDetails = (workshopName) => {
+    setActiveSection('workshop-details');
+    setWorkshopTitle(workshopName);
+  };
+
+  // Function to navigate back to a previous section
+  const goBack = (sectionId) => {
+    setActiveSection(sectionId);
+  };
+
+  // Function to handle registration form submission
+  const submitRegistration = (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    
+    const formData = new FormData(event.target);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    
+    // Navigate to the registration summary page with form data and workshop title
+    navigate('/registration-summary', { state: { formData: data, eventTitle: workshopTitle } });
+  };
+
+  return (
+    <div>
+      {/* Main Menu */}
+      <div id="main-menu" className={`section ${activeSection === 'main-menu' ? 'active' : ''}`}>
+        <FaArrowLeft className="go-back-arrow" style={{ display: 'none' }} />
+        <h1>Select Workshop Category</h1>
+        <button onClick={() => showWorkshops('technical')}>Technical Workshops</button>
+        <button onClick={() => showWorkshops('nonTechnical')}>Non-Technical Workshops</button>
+      </div>
+
+      {/* Technical Workshops List */}
+      <div id="technical-workshops-list" className={`section ${activeSection === 'technical-workshops-list' ? 'active' : ''}`}>
+        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('main-menu')} />
+        <h1>Technical Workshops</h1>
+        <button onClick={() => showWorkshopDetails('Web Development')}>Web Development</button>
+        <button onClick={() => showWorkshopDetails('Data Science')}>Data Science</button>
+        <button onClick={() => showWorkshopDetails('Machine Learning')}>Machine Learning</button>
+        <button onClick={() => showWorkshopDetails('Cybersecurity')}>Cybersecurity</button>
+      </div>
+
+      {/* Non-Technical Workshops List */}
+      <div id="non-technical-workshops-list" className={`section ${activeSection === 'non-technical-workshops-list' ? 'active' : ''}`}>
+        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('main-menu')} />
+        <h1>Non-Technical Workshops</h1>
+        <button onClick={() => showWorkshopDetails('Creative Writing')}>Creative Writing</button>
+        <button onClick={() => showWorkshopDetails('Public Speaking')}>Public Speaking</button>
+        <button onClick={() => showWorkshopDetails('Leadership Skills')}>Leadership Skills</button>
+      </div>
+
+      {/* Workshop Details and Registration */}
+      <div id="workshop-details" className={`section ${activeSection === 'workshop-details' ? 'active' : ''}`}>
+        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('technical-workshops-list')} />
+        <h1 id="workshop-title">Register for {workshopTitle} Workshop</h1>
+        <p><strong>Start Date:</strong> October 15, 2024</p>
+        <p><strong>End Date:</strong> October 17, 2024</p><br />
+
+        <div className="registration-container">
+          <form id="registration-form" onSubmit={submitRegistration}>
+            <label htmlFor="student-name">Student Name:</label>
+            <input type="text" id="student-name" name="studentName" placeholder='Enter your Full name' required /><br /><br />
+
+            <label htmlFor="student-email">Student Email:</label>
+            <input type="email" id="student-email" name="studentEmail" placeholder='Enter your Email id' required /><br /><br />
+
+            <label htmlFor="phone-number">Phone Number:</label>
+            <input type="text" id="phone-number" name="phoneNumber" placeholder='Enter your Phone number' required /><br /><br />
+
+            <label htmlFor="college-name">College Name:</label>
+            <select id="college-name" name="collegeName" required>
+              {colleges.map((college, index) => (
+                <option key={index} value={college}>{college}</option>
+              ))}
+            </select><br /><br />
+
+            <button type="submit">Submit Registration</button>
+          </form>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Workshops;

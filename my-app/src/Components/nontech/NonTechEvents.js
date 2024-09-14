@@ -55,6 +55,20 @@ const NonTechEvents = () => {
 
         // Optionally, reset the form or handle additional logic here
     };
+    const colleges = [
+        'Select your college',
+        'Indian Institute of Technology Madras (IIT Madras)',
+        'Anna University',
+        'Loyola College',
+        'Madras Christian College (MCC)',
+        'Presidency College',
+        'SRM Institute of Science and Technology',
+        'Sathyabama Institute of Science and Technology',
+        'Stella Maris College',
+        'Hindustan Institute of Technology and Science (HITS)',
+        'Vellore Institute of Technology (VIT)',
+        'Saveetha Institute of Medical and Technical Sciences'
+      ];
 
     return (
         <div>
@@ -78,8 +92,7 @@ const NonTechEvents = () => {
 
                 <h2>Register for this Event</h2>
                 <form id="registration-form" onSubmit={submitRegistration}>
-                    <label htmlFor="college-name">College Name:</label>
-                    <input type="text" id="college-name" name="collegeName" required /><br /><br />
+                  
 
                     <label htmlFor="student-name">Student Name:</label>
                     <input type="text" id="student-name" name="studentName" required /><br /><br />
@@ -89,6 +102,12 @@ const NonTechEvents = () => {
 
                     <label htmlFor="phone-number">Phone Number:</label>
                     <input type="text" id="phone-number" name="phoneNumber" required /><br /><br />
+                    <label htmlFor="phone-number">Collage Name:</label>
+           <select id="college-name" name="collegeName" required>
+              {colleges.map((college, index) => (
+                <option key={index} value={college}>{college}</option>
+              ))}
+            </select><br /><br />
 
                     <button type="submit">Submit Registration</button>
                 </form>

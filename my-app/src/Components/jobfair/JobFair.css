@@ -1,25 +1,95 @@
-.job-fair {
+.x{
+    font-family: 'Times New Roman', serif;
+    text-align: center;
     padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.job-list {
+    background-color: #f0f8ff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .section {
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 300px;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
+  form input, form select {
+    padding: 8px;
+    width: 340px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  form button {
+    margin-top: 5px;
+    background-color: #d10000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #a30202;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #4488d6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .registration-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-.job-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-}
-
-.job-card h2 {
-    margin: 0 0 10px;
-}
-
-.job-card p {
-    margin: 5px 0;
-}
+    min-height: 400px;
+    justify-content: space-between;
+    align-items: center;
+  }

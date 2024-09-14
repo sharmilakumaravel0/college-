@@ -26,6 +26,21 @@ const OnlineEvents = () => {
       setActiveSection(sectionId); // Switch to the specified section
     }
   };
+  const colleges = [
+    'Select your college',
+    'Indian Institute of Technology Madras (IIT Madras)',
+    'Anna University',
+    'Loyola College',
+    'Madras Christian College (MCC)',
+    'Presidency College',
+    'SRM Institute of Science and Technology',
+    'Sathyabama Institute of Science and Technology',
+    'Stella Maris College',
+    'Hindustan Institute of Technology and Science (HITS)',
+    'Vellore Institute of Technology (VIT)',
+    'Saveetha Institute of Medical and Technical Sciences'
+  ];
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +65,30 @@ const OnlineEvents = () => {
     });
   };
 
+  // Event details including dates only
+  const eventDetailsData = {
+    'Clickography': {
+      startDate: '2024-09-30',
+      endDate: '2024-09-30'
+    },
+    'Freeze-it (Photography)': {
+      startDate: '2024-10-01',
+      endDate: '2024-10-01'
+    },
+    'Memezone (Meme Creation)': {
+      startDate: '2024-10-02',
+      endDate: '2024-10-02'
+    },
+    'Virtual Reality Quiz': {
+      startDate: '2024-10-03',
+      endDate: '2024-10-03'
+    },
+    'Online Scavenger Hunt': {
+      startDate: '2024-10-04',
+      endDate: '2024-10-04'
+    }
+  };
+
   return (
     <div className="container">
       {/* Online Events List */}
@@ -68,18 +107,12 @@ const OnlineEvents = () => {
         <FaArrowLeft className="go-back-arrow" onClick={() => goBack('online-events-list')} />
         <h1 id="event-title">{eventName}</h1>
 
+        <p><strong>Start Date:</strong> {eventDetailsData[eventName]?.startDate}</p>
+        <p><strong>End Date:</strong> {eventDetailsData[eventName]?.endDate}</p>
+
         <h2>Register for this Event</h2>
         <form id="registration-form" onSubmit={handleSubmit}>
-          <label htmlFor="college-name">College Name:</label>
-          <input
-            type="text"
-            id="college-name"
-            name="collegeName"
-            value={formData.collegeName}
-            onChange={handleChange}
-            required
-          /><br /><br />
-
+          
           <label htmlFor="student-name">Student Name:</label>
           <input
             type="text"
@@ -109,6 +142,12 @@ const OnlineEvents = () => {
             onChange={handleChange}
             required
           /><br /><br />
+          <label htmlFor="phone-number">Collage Name:</label>
+           <select id="college-name" name="collegeName" required>
+              {colleges.map((college, index) => (
+                <option key={index} value={college}>{college}</option>
+              ))}
+            </select><br /><br />
 
           <button type="submit">Submit Registration</button>
         </form>
