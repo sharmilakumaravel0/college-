@@ -1,6 +1,17 @@
 {
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "age": 22,
-  "course": "Computer Science"
+  "registrations": [
+    {
+      "studentName": "John Doe",
+      "collegeName": "Example College",
+      "phoneNumber": "1234567890",
+      "studentEmail": "john.doe@example.com",
+      "eventTitle": "paper presentation"
+    }
+  ],
+  "login": [
+    {
+      "username": "admin",
+      "password": "admin123"
+    }
+  ]
 }

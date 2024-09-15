@@ -1,8 +1,12 @@
 /* General styling for the page */
-body {
+.z {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
+    padding: 20px;
+    background-image: url("https://png.pngtree.com/background/20220731/original/pngtree-cute-background-shape-picture-image_1911311.jpg");background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .section {

@@ -2,6 +2,7 @@
 .b  {
   font-family: 'Times New Roman', serif;
   text-align: center;
+  min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
   padding: 20px;
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/026/858/512/small_2x/of-a-colorful-assortment-of-sports-balls-on-a-white-background-with-copy-space-free-photo.jpg");background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +55,7 @@ form label {
 
 form button {
   margin-top: 5px;
-  background-color: #1d2d3f;
+  background-color: #af0d0d;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -63,7 +64,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #f39e16;
 }
 
 .goback-button {

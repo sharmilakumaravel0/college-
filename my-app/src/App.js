@@ -33,6 +33,8 @@ import Technical from './Components/technical/Technical';
 import NonTechEvents from './Components/nontech/NonTechEvents';
 import EventProvides from './Components/eventproviders/EventProviders';
 
+import Registration from './Components/register/Registration';
+
 
 
 
@@ -63,6 +65,7 @@ function App() {
         <Route path="/onlineevents" element={<OnlineEvents />} />
         <Route path="/technical" element={<Technical/>} />
         <Route path="/nontech" element={<NonTechEvents/>} />
+        <Route path="/register" element={<Registration/>} />
         
        
         
