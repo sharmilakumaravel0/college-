@@ -1,6 +1,7 @@
 /* General styling for the page */
 .f {
-  margin: 0;
+  margin:0;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   background-image: url("https://www.baltana.com/files/wallpapers-2/Photography-HD-Wallpapers-05028.jpg");background-repeat: no-repeat;
   background-size: cover;
@@ -8,15 +9,16 @@
 }
 
 .section {
+  
   display: none;
   flex-direction: column;
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   background-color: #fffffc;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Center horizontally */
+   margin:20px auto;/* Center horizontally */
   position: relative;
   min-height: 500px;
   width: 80%; /* Responsive width */
@@ -92,4 +94,7 @@
 
 .go-back-arrow:hover {
   color: #0056b3;
+}
+#event-details h2{
+  color:#a70a07
 }

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './CollegeList.css';
-import Footer from '../footer/Footer';
-import { FaSearch } from 'react-icons/fa'; // Importing search icon from react-icons
+import './CollegeList.css'; // Import your CSS styles
 
 const colleges = [
   { id: 'Indian Institute of Technology Madras (IIT Madras)', image: 'https://sc0.blr1.cdn.digitaloceanspaces.com/article/173423-vcsetfhpsr-1650631711.jpg', description: 'Leading technical institute in India.' },
@@ -19,73 +16,46 @@ const colleges = [
 
 const CollegeList = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCollege, setSelectedCollege] = useState('');
-  const navigate = useNavigate();
 
-  const handleCollegeClick = (collegeId) => {
-    setSelectedCollege(collegeId);
-  };
-
-  const handleViewEvents = () => {
-    if (selectedCollege) {
-      navigate(`/events?college=${selectedCollege}`);
-    }
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  // Filter and sort colleges
-  const filteredColleges = colleges
-    .filter(college => college.id.toLowerCase().includes(searchQuery.toLowerCase()))
-    .sort((a, b) => {
-      if (a.id.toLowerCase() === searchQuery.toLowerCase()) return -1;
-      if (b.id.toLowerCase() === searchQuery.toLowerCase()) return 1;
-      return 0;
-    });
+  const filteredColleges = colleges.filter(college =>
+    college.id.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <>
-      <div className="college-list-container">
-        <h1>Chennai Colleges</h1>
-        <div className="search-bar">
-          <FaSearch className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search Colleges..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className="search-input"
-          />
-        </div>
-        <div className="college-list">
-          {filteredColleges.map((college) => (
-            <div
-              key={college.id}
-              className={`college-item ${selectedCollege === college.id ? 'active' : ''}`}
-              onClick={() => handleCollegeClick(college.id)}
-            >
-              <div className="college-image">
-                <img src={college.image} alt={college.id} />
-              </div>
-              <div className="college-description">
-                <h2>{college.id}</h2>
-                <p>{college.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button
-          id="view-events-btn"
-          disabled={!selectedCollege}
-          onClick={handleViewEvents}
-        >
-          View Events
-        </button>
+    <div className="college-list-container">
+      <h1>Chennai Colleges</h1>
+      <div className="search-bar">
+        <i className="fas fa-search search-icon"></i>
+        <input
+          type="text"
+          placeholder="Search Colleges..."
+          className="search-input"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
-      <Footer />
-    </>
+      <div className="college-list">
+        {filteredColleges.map((college) => (
+          <div
+            key={college.id}
+            className="college-item"
+            onClick={() => window.location.href =   `/events?college=  $ {encodeURIComponent(college.id)} `}
+          >
+            <div className="college-image">
+              <img src={college.image} alt={college.id} />
+            </div>
+            <div className="college-description">
+              <h2>{college.id}</h2>
+              <p>{college.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button id="view-events-btn">View Events</button>
+      <footer>
+        <p>&copy; 2024 College List. All rights reserved.</p>
+      </footer>
+    </div>
   );
 };
 

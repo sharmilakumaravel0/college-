@@ -23,7 +23,7 @@ const Header = () => {
         
         
 
-        <li><Link to="/studentregistration">StudentRegistration</Link></li>
+        <li><Link to="/signup">Signup</Link></li>
        
         <li><Link to="/contactus">ContactUs</Link></li>
         

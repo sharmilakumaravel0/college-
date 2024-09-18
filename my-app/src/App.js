@@ -6,22 +6,23 @@ import "./Components/carousel/Carousel.css"
 import "./Components/eventinfo/EventInfo.css"
 import "./Components/footer/Footer.css"
 import "./Components/header/Header.css"
+
 import "./Components/eventproviders/EventProviders.css"
 import Home from './Components/eventproviders/EventProviders'
 import About from './Components/about/About'
-import StudentRegistration from './Components/studentregistration/StudentRegistration';
+
 import ContactUs from './Components/contactus/ContactUs';
 import Login from './Components/login/Login';
 import CollegeList from './Components/CollegeList/collegeList';
 import Events from './Components/events/Events';
 import JobFair from './Components/jobfair/JobFair';
-import "./Components/studentregistration/StudentRegistration.css";
+import Signup from './Components/signup/Signup';
 import "./Components/contactus/ContactUs.css"
-import "./Components/login/Login.css"
+
 import "./Components/events/Events.css"
 import "./Components/herosection/HeroSection.css"
 import AdminLogin from './AdminLogin';
-import StudentDetails from './Components/StudentDetails';
+
 import "./Components/jobfair/JobFair.css";
 import Workshop from './Components/workshop/WorkShop';
 import Sports from './Components/sports/Sports';
@@ -34,6 +35,8 @@ import NonTechEvents from './Components/nontech/NonTechEvents';
 import EventProvides from './Components/eventproviders/EventProviders';
 
 import Registration from './Components/register/Registration';
+import "./Auth.css"
+
 
 
 
@@ -48,7 +51,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/studentregistration" element={<StudentRegistration />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/colleges" element={<CollegeList />} />
@@ -57,11 +60,10 @@ function App() {
         <Route path="/workshop" element={<Workshop />} />
         <Route path="/eventproviders" element={<EventProvides />} />
         <Route path="/sports" element={<Sports />} />
-        <Route path="/adminlogin" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/adminlogin/" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/registration-summary" element={<RegistrationSummary />} />
-        <Route path="/studentdetails" element={<StudentDetails />} />
-       
+        
         <Route path="/onlineevents" element={<OnlineEvents />} />
         <Route path="/technical" element={<Technical/>} />
         <Route path="/nontech" element={<NonTechEvents/>} />

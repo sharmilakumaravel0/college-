@@ -1,91 +1,33 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Footer from '../footer/Footer';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!username || !email || !password) {
-            alert("All fields are required!");
-            return;
+        try {
+            await axios.post('http://localhost:5002/login', { email, password });
+            alert('Login successful!');
+        } catch (error) {
+            alert('Login failed');
         }
-        // Additional validation or form submission logic can be added here
-    };
-
-    const goToSignUp = () => {
-        navigate('/studentregistration'); // Adjust this path if needed
     };
 
     return (
-        <>
-            <div className='BACK'>
-                <div className="container2">
-                    {/* Left side image */}
-                    <div className="image-section">
-                        <img
-                            src="https://lh7-us.googleusercontent.com/gdGRedSlqmkUEvQNu6EPVu-xRXPqQPPYVjB686TIHH1wJ0iPnCklzcAlgOVtDik2wjAFvVwUBMFxi62gh2m199V5fbJlNrJGzKeQ5xgNSo4_tgEIm977ZC0Af5adCn7f8U2sM3i8vSqT6BZ5JF1NuZE=w400-h224"
-                            alt="Login"
-                        />
-                    </div>
-                    
-                    {/* Right side login form */}
-                    <div className="form-section">
-                        <h2>Login</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="input-group">
-                                <i className="fas fa-user"></i>
-                                <label htmlFor="username">Username</label>
-                                <input
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Enter your username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="input-group">
-                                <i className="fas fa-envelope"></i>
-                                <label htmlFor="email">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="input-group">
-                                <i className="fas fa-lock"></i>
-                                <label htmlFor="password">Password</label>
-                                <input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    placeholder="Enter your password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="button-group">
-                                <button type="submit" className="btn">Login</button>
-                                <button type="button" className="btn sign-up-btn" onClick={goToSignUp}>Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </>
+        <div className="auth-container">
+            <h2>Log In</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Email:</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <label>Password:</label>
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <button type="submit">Log In</button>
+            </form>
+            <p>Don't have an account? <Link to="/signup">Go to Signup</Link></p>
+        </div>
     );
 };
 

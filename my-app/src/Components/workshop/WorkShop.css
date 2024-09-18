@@ -1,93 +1,117 @@
 /* General styling for the page */
 .aa {
     margin: 0;
+    min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
     font-family: Arial, sans-serif;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlCzARGXgNBwgEgNowGOssNXHBtM5jnL8mbw&s");
+    background-image: url("https://img.pikbest.com/backgrounds/20220119/technology-business-line-purple-blue-sci-tech-style-event-exhibition_6244671.jpg!bw700");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
 }
 
+/* Styling for sections */
 .section {
+    margin-top: 50px;
     display: none;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
     position: relative;
     min-height: 500px;
-    width: 80%;
-    max-width: 600px;
+    width: 80%; /* Responsive width */
+    max-width: 600px; /* Maximum width */
     text-align: center;
 }
 
+/* Show the active section */
 .section.active {
-    display: flex;
+    display: flex; /* Changed to flex for vertical centering */
 }
 
+/* Styling for workshop boxes */
 .workshop-box {
     background-color: #e3e3e3;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 300px;
+    width: 100%; /* Full width within the section */
+    max-width: 300px; /* Medium size */
     text-align: center;
     cursor: pointer;
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s forwards;
+    display: inline-block; /* Center alignment */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start from a lower position */
+    animation: fadeInUp 0.5s forwards; /* Animation */
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Animation delays for workshop boxes */
 .workshop-box:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 0.1s; /* Delay for first box */
 }
 
 .workshop-box:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.2s; /* Delay for second box */
 }
 
 .workshop-box:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.3s; /* Delay for third box */
 }
 
 .workshop-box:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 0.4s; /* Delay for fourth box */
 }
 
 .workshop-box:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 0.5s; /* Delay for fifth box */
 }
 
 .workshop-box:hover {
     background-color: #d3d3d3;
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
+/* Keyframes for animation */
 @keyframes fadeInUp {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* Move to its final position */
     }
 }
 
+/* Styling for the go-back arrow */
 .go-back-arrow {
     font-size: 24px;
     cursor: pointer;
     color: #1d2d3f;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 10px; /* Position from the top */
+    left: 10px; /* Position from the left */
 }
 
 .go-back-arrow:hover {
     color: #0056b3;
 }
 
+#event-details h2 {
+    color: #a70a07;
+}
+
+/* General styling for the page */
+.aa {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://www.shutterstock.com/image-photo/male-speaker-giving-presentation-hall-600nw-1474399745.jpg");
+}
+
+/* Styling for registration form */
 .registration-container {
     width: 100%;
     max-width: 600px;
@@ -95,18 +119,27 @@
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 10px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
 }
 
+.form-group label {
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
 input, select {
-    margin: 5px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
-    max-width: 400px;
 }
 
 button {
@@ -116,6 +149,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -124,7 +158,6 @@ button:hover {
 
 button.back-button {
     background-color: #6c757d;
-    margin-top: 10px;
 }
 
 button.back-button:hover {

@@ -3,7 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa'; // Importing arrow icon from react
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import QRCode from 'react-qr-code'; // Import QRCode component
 
-function JobFairs() {
+function JobFair() {
   const [activeSection, setActiveSection] = useState('main-menu');
   const [jobFairTitle, setJobFairTitle] = useState('');
   const [jobDescriptions, setJobDescriptions] = useState([]);
@@ -155,114 +155,119 @@ function JobFairs() {
     setFormData(prev => ({ ...prev, jobRole: selectedJob?.title || '' }));
   };
 
-  // Generate the booking URL
+  // Generate the booking URL with payment amount
   const bookingURL = `https://example.com/register?title=${encodeURIComponent(jobFairTitle)}&amount=${paymentAmount}`;
 
   return (
-    <div className="job-fairs">
-      {/* Main Menu */}
-      <div id="main-menu" className={`section ${activeSection === 'main-menu' ? 'active' : ''}`}>
-        <h1>Select a Company Job Fair</h1>
-        {activeSection !== 'main-menu' && (
-          <FaArrowLeft className="go-back-arrow" onClick={goBack} />
-        )}
-        {companies.map((company, index) => (
-          <button key={index} onClick={() => showJobFairDetails(company)}>
-            {company.name} Job Fair
-          </button>
-        ))}
-      </div>
+    <>
+      <div className='vv'>
+        <div className="job-fairs">
+          {/* Main Menu */}
+          <div id="main-menu" className={`section ${activeSection === 'main-menu' ? 'active' : ''}`}>
+            <h1>Select a Company Job Fair</h1>
+            {activeSection !== 'main-menu' && (
+              <FaArrowLeft className="go-back-arrow" onClick={goBack} />
+            )}
+            {companies.map((company, index) => (
+              <button key={index} onClick={() => showJobFairDetails(company)}>
+                {company.name} Job Fair
+              </button>
+            ))}
+          </div>
 
-      {/* Job Fair Details and Registration */}
-      <div id="job-fair-details" className={`section ${activeSection === 'job-fair-details' ? 'active' : ''}`}>
-        <FaArrowLeft className="go-back-arrow" onClick={goBack} />
-        <h1>Register for {jobFairTitle} Job Fair</h1>
-        <p><strong>Start Date:</strong> November 1, 2024</p>
-        <p><strong>End Date:</strong> November 3, 2024</p><br />
+          {/* Job Fair Details and Registration */}
+          <div id="job-fair-details" className={`section ${activeSection === 'job-fair-details' ? 'active' : ''}`}>
+            <FaArrowLeft className="go-back-arrow" onClick={goBack} />
+            <h1>Register for {jobFairTitle} Job Fair</h1>
+            <p><strong>Start Date:</strong> November 1, 2024</p>
+            <p><strong>End Date:</strong> November 3, 2024</p>
+             {/* QR Code for payment moved below end date */}
+             <div className="qr-code-container">
+                <p><strong>Payment Amount:</strong> {paymentAmount}</p>
+                <QRCode value={bookingURL} size={128} />
+                <p>Scan the QR code to complete your registration.</p>
+            {/* Registration Form */}
+            <div className="registration-container">
+              <form id="registration-form" onSubmit={handleSubmit}>
+                <label htmlFor="student-name">Student Name:</label>
+                <input
+                  type="text"
+                  id="student-name"
+                  name="studentName"
+                  value={formData.studentName}
+                  onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
+                  required
+                /><br /><br />
 
-        {/* Registration Form */}
-        <div className="registration-container">
-          <form id="registration-form" onSubmit={handleSubmit}>
-            <label htmlFor="student-name">Student Name:</label>
-            <input
-              type="text"
-              id="student-name"
-              name="studentName"
-              value={formData.studentName}
-              onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-              required
-            /><br /><br />
+                <label htmlFor="student-email">Student Email:</label>
+                <input
+                  type="email"
+                  id="student-email"
+                  name="studentEmail"
+                  value={formData.studentEmail}
+                  onChange={(e) => setFormData({ ...formData, studentEmail: e.target.value })}
+                  required
+                /><br /><br />
 
-            <label htmlFor="student-email">Student Email:</label>
-            <input
-              type="email"
-              id="student-email"
-              name="studentEmail"
-              value={formData.studentEmail}
-              onChange={(e) => setFormData({ ...formData, studentEmail: e.target.value })}
-              required
-            /><br /><br />
+                <label htmlFor="phone-number">Phone Number:</label>
+                <input
+                  type="text"
+                  id="phone-number"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                  required
+                /><br /><br />
 
-            <label htmlFor="phone-number">Phone Number:</label>
-            <input
-              type="text"
-              id="phone-number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-              required
-            /><br /><br />
+                <label htmlFor="college-name">College Name:</label>
+                <select
+                  id="college-name"
+                  name="collegeName"
+                  value={formData.collegeName}
+                  onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
+                  required
+                >
+                  <option value="">Select your college</option>
+                  {colleges.map((college, index) => (
+                    <option key={index} value={college}>{college}</option>
+                  ))}
+                </select><br /><br />
 
-            <label htmlFor="college-name">College Name:</label>
-            <select
-              id="college-name"
-              name="collegeName"
-              value={formData.collegeName}
-              onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
-              required
-            >
-              <option value="">Select your college</option>
-              {colleges.map((college, index) => (
-                <option key={index} value={college}>{college}</option>
-              ))}
-            </select><br /><br />
+                {/* Job Role Dropdown */}
+                <label htmlFor="job-role">Select Job Role:</label>
+                <select
+                  id="job-role"
+                  name="jobRole"
+                  value={formData.jobRole}
+                  onChange={handleRoleSelection}
+                  required
+                >
+                  <option value="">Select a Role</option>
+                  {jobDescriptions.map((job, index) => (
+                    <option key={index} value={job.title}>{job.title}</option>
+                  ))}
+                </select><br /><br />
 
-            {/* Job Role Dropdown */}
-            <label htmlFor="job-role">Select Job Role:</label>
-            <select
-              id="job-role"
-              name="jobRole"
-              value={formData.jobRole}
-              onChange={handleRoleSelection}
-              required
-            >
-              <option value="">Select a Role</option>
-              {jobDescriptions.map((job, index) => (
-                <option key={index} value={job.title}>{job.title}</option>
-              ))}
-            </select><br /><br />
+                <button type="submit">Submit Registration</button>
+              </form>
 
-            <button type="submit">Submit Registration</button>
-          </form>
+              {/* Job Description Container */}
+              {selectedRole && (
+                <div className="job-description-container">
+                  <h2>Job Description</h2>
+                  <h3>Role: {selectedRole}</h3>
+                  <p><strong>Qualifications:</strong> {selectedQualification}</p>
+                </div>
+              )}
 
-          {/* Job Description Container */}
-          {selectedRole && (
-            <div className="job-description-container">
-              <h2>Job Description</h2>
-              <h3>Role: {selectedRole}</h3>
-              <p><strong>Qualifications:</strong> {selectedQualification}</p>
+             
+              </div>
             </div>
-          )}
-
-          {/* QR Code for payment */}
-          <div className="qr-code-container">
-            <QRCode value={bookingURL} size={128} />
-            <p>Scan the QR code to complete your registration.</p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default JobFairs;
+export default JobFair;

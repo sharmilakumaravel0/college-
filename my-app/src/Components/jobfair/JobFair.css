@@ -1,8 +1,13 @@
-.x{
+.vv{
+  min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
+  padding: 20px;
+    background-image: url("https://img.pikbest.com/backgrounds/20190701/summer-training-course-enrollment-hd-background_1896928.jpg!bw700");background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     font-family: 'Times New Roman', serif;
     text-align: center;
     padding: 20px;
-    background-color: #f0f8ff;
+    
   }
   
   button {
@@ -23,7 +28,7 @@
   
   .section {
     display: none;
-    background-color: #ffffff;
+    
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

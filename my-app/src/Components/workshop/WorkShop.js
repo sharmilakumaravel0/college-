@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import QRCode from 'react-qr-code'; // Import QRCode component
 
+
 function Workshops() {
   const [activeSection, setActiveSection] = useState('main-menu');
   const [workshopTitle, setWorkshopTitle] = useState('');
@@ -64,7 +65,10 @@ function Workshops() {
   const bookingURL = `https://example.com/register?title=${encodeURIComponent(workshopTitle)}&amount=${paymentAmount}`;
 
   return (
-    <div>
+    <>
+    <div className='aa'>
+
+      
       {/* Main Menu */}
       <div id="main-menu" className={`section ${activeSection === 'main-menu' ? 'active' : ''}`}>
         <FaArrowLeft className="go-back-arrow" style={{ display: 'none' }} />
@@ -128,6 +132,8 @@ function Workshops() {
         </div>
       </div>
     </div>
+    
+    </>
   );
 }
 

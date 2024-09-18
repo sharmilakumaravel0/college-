@@ -1,17 +1,9 @@
 {
-  "registrations": [
-    {
-      "studentName": "John Doe",
-      "collegeName": "Example College",
-      "phoneNumber": "1234567890",
-      "studentEmail": "john.doe@example.com",
-      "eventTitle": "paper presentation"
-    }
-  ],
-  "login": [
+  "admins": [
     {
       "username": "admin",
-      "password": "admin123"
+      "password": "admin"
     }
-  ]
+  ],
+  "registrations": []
 }
