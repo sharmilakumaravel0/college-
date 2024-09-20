@@ -3,12 +3,13 @@
     margin: 0;
     min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
     font-family: Arial, sans-serif;
-    background-image: url("https://img.pikbest.com/backgrounds/20220119/technology-business-line-purple-blue-sci-tech-style-event-exhibition_6244671.jpg!bw700");
+    background-image: url("https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg");
     background-repeat: no-repeat;
     background-size: cover; /* Ensure the image covers the entire background */
     background-position: center; /* Center the image */
     display: flex;
     justify-content: center;
+    align-items: center; /* Center vertically */
 }
 
 /* Styling for sections */

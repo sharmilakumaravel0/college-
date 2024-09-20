@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './CollegeList.css'; // Import your CSS styles
+import Footer from '../footer/Footer';
+
 
 const colleges = [
   { id: 'Indian Institute of Technology Madras (IIT Madras)', image: 'https://sc0.blr1.cdn.digitaloceanspaces.com/article/173423-vcsetfhpsr-1650631711.jpg', description: 'Leading technical institute in India.' },
@@ -22,8 +24,10 @@ const CollegeList = () => {
   );
 
   return (
+    <>
+    <div className='cc'>
     <div className="college-list-container">
-      <h1>Chennai Colleges</h1>
+      <h2 className='ii'>Chennai Colleges</h2>
       <div className="search-bar">
         <i className="fas fa-search search-icon"></i>
         <input
@@ -52,10 +56,12 @@ const CollegeList = () => {
         ))}
       </div>
       <button id="view-events-btn">View Events</button>
-      <footer>
-        <p>&copy; 2024 College List. All rights reserved.</p>
-      </footer>
+    
     </div>
+    </div>
+    <Footer/>
+</>
+
   );
 };
 

@@ -1,39 +1,54 @@
-import React from 'react';
-import './Header.css'; // Import the specific CSS file for Header
+import React, { useState } from 'react';
+import './Header.css';
 import { Link } from 'react-router-dom';
+import eventsphere_logo from '../Assets/eventsphere_logo.png';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close menu on link click
+  };
+
   return (
     <header className='v'>
-      <Link to="/adminlogin" className="logo-link">
-          <div className="logo">
-            <img 
-              src="https://i.pinimg.com/originals/29/4c/e0/294ce071f8296c4d4ca39af8267cc2b0.jpg" 
-              alt="College Event Management Logo" 
-              className="logo-image"
-            />
-            </div>
-            </Link>
-      <h1>College Event Management</h1>
+      <div className="logo-link" onClick={toggleMenu}>
+        <div className="logo">
+          <img 
+            src={eventsphere_logo} 
+            alt="College Event Management Logo" 
+            className="logo-image"
+          />
+        </div>
+      </div>
+      <div className="header-title">
+        <h1 className='pp'>EventSphere</h1>
+      </div>
       <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/colleges">Colleges</Link></li>
-        
-        
-
-        <li><Link to="/signup">Signup</Link></li>
-       
-        <li><Link to="/contactus">ContactUs</Link></li>
-        
-       <li><Link to="/login" className="nav-login">Login</Link></li>
-      
-
-      </ul>
-    </nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/colleges">Colleges</Link></li>
+          <li><Link to="/signup">Signup</Link></li>
+          <li><Link to="/contactus">Contact Us</Link></li>
+          <li><Link to="/login" className="nav-login">Login</Link></li>
+        </ul>
+      </nav>
+      {isMenuOpen && (
+        <div className="side-menu">
+          <ul>
+            <li><Link to="/adminlogin" onClick={handleLinkClick}>AdminLogin</Link></li>
+            <li><Link to="/admin/dashboard" onClick={handleLinkClick}>AdminDashboard</Link></li>
+          </ul>
+        </div>
+      )}
+      {isMenuOpen && <div className="overlay" onClick={toggleMenu}></div>} {/* Overlay to close menu */}
     </header>
   );
-}
+};
 
 export default Header;

@@ -8,9 +8,11 @@
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .logo-link {
     text-decoration: none;
-  }
+}
+
 .logo {
     border-radius: 50%;
     width: 50px; /* Adjust size as needed */
@@ -19,17 +21,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .logo-image {
+}
+
+.logo-image {
     width: 100%;
     height: auto;
-  }
+    background-color: #fefdfd;
+}
+
+.header-title {
+    flex-grow: 1; /* Allow the title to grow and take space */
+    text-align: left; /* Align text to the left */
+}
 
 header h1 {
     margin: 0;
     font-size: 2rem;
-    text-align: left;
-    color:rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
 }
 
 nav {
@@ -116,4 +124,36 @@ nav ul li:hover > ul {
     color: #fff;
     transform: scale(1.1);
 }
+.side-menu {
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it overlays other content */
+  }
+  
+  .side-menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .side-menu li {
+    margin: 5px 0;
+  }
+  
+  .side-menu a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .side-menu a:hover {
+    text-decoration: underline;
+  }
 
+  .pp{
+    font-style:italic;
+  }
+  

@@ -1,40 +1,75 @@
+.rr {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height for the background */
+    background-image: url('https://png.pngtree.com/background/20210709/original/pngtree-school-season-welcome-new-students-blackboard-hand-painted-picture-image_923676.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: Arial, sans-serif; /* Set a default font for the page */
+}
+
 .auth-container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
+    width: 350px; 
+    padding: 30px; 
+    border: 1px solid #ddd; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for better visibility */
+    transition: transform 0.3s; 
+}
+
+.auth-container:hover {
+    transform: scale(1.05); 
 }
 
 .auth-container h2 {
     margin-bottom: 20px;
+    color: #333; 
 }
 
 .auth-container label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: bold; 
+    color: #555; 
 }
 
 .auth-container input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    font-size: 16px; 
+    transition: border-color 0.3s; 
+}
+
+.auth-container input:focus {
+    border-color: #28a745; 
+    outline: none; 
 }
 
 .auth-container button {
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
+    padding: 12px; 
+    background-color: #dc3545; 
+    border: none; 
+    border-radius: 6px; 
+    color: #fff; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; 
 }
 
 .auth-container button:hover {
-    background-color: #218838;
+    background-color: #c82333; 
+    transform: scale(1.05); 
+}
+
+.auth-container button:active {
+    transform: scale(0.95); 
 }

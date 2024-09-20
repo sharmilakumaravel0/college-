@@ -6,9 +6,10 @@
     background-size: cover;
 }
 
-.heroContent h1 {
+h1 {
     font-size: 3em;
     margin: 0;
+    color: rgb(255, 0, 0);
 }
 
 .e{

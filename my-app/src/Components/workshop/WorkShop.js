@@ -4,6 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import QRCode from 'react-qr-code'; // Import QRCode component
 
 
+
 function Workshops() {
   const [activeSection, setActiveSection] = useState('main-menu');
   const [workshopTitle, setWorkshopTitle] = useState('');

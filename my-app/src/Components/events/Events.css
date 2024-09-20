@@ -1,4 +1,7 @@
 /* event.css */
+.t{
+    text-align: center;
+}
 .events{
     display: flex;
     flex-wrap: wrap;

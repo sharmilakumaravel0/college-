@@ -1,21 +1,41 @@
+// routes/admin.js
 const express = require('express');
 const router = express.Router();
-const Admin = require('../models/Admin');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const Registration = require('../models/Registration');
 
-// Admin login
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
 
-  const admin = await Admin.findOne({ email });
-  if (!admin) return res.status(400).json({ message: 'Invalid credentials' });
 
-  const isMatch = await bcrypt.compare(password, admin.password);
-  if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
+// Handle student registration
+router.post('/registrations', async (req, res) => {
+    try {
+        const { studentName, studentEmail, phoneNumber, collegeName, eventTitle } = req.body;
 
-  const token = jwt.sign({ id: admin._id }, 'secretKey', { expiresIn: '1h' });
-  res.json({ token });
+        // Create a new registration entry
+        const newRegistration = new Registration({
+            studentName,
+            studentEmail,
+            phoneNumber,
+            collegeName,
+            eventTitle
+        });
+
+        await newRegistration.save();
+        res.status(201).json({ success: true, message: 'Registration successful' });
+    } catch (error) {
+        console.error('Error during registration:', error);
+        res.status(500).json({ success: false, message: 'Error during registration' });
+    }
+});
+
+// Fetch all student registrations (for Admin Dashboard)
+router.get('/registrations', async (req, res) => {
+    try {
+        const registrations = await Registration.find();
+        res.json(registrations);
+    } catch (error) {
+        console.error('Error fetching registrations:', error);
+        res.status(500).json({ success: false, message: 'Error fetching registrations' });
+    }
 });
 
 module.exports = router;

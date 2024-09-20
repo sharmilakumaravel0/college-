@@ -1,6 +1,5 @@
 // src/Events.js
 import React from 'react';
-import '../Assets/Technical_icon.png';
 import Footer from '../footer/Footer'; // Ensure this path is correct
 
 function Events() {
@@ -13,25 +12,25 @@ function Events() {
       <h1 className='t'>Events</h1>
       <div className="events">
         <div className="box technical" onClick={() => navigateTo('/technical')}>
-        <img src={Assets.Technical_icon.png} />  Technical Events
+          Technical Events
         </div>
         <div className="box non-technical" onClick={() => navigateTo('/nontech')}>
-        <img src={Assets.NonTechnical_icon.png} /> Non-Technical Events
+          Non-Technical Events
         </div>
         <div className="box online" onClick={() => navigateTo('/onlineevents')}>
-      <img src={Assets.OnlineEvents_icon.png} /> Online Events
+          Online Events
         </div>
         <div className="box sports" onClick={() => navigateTo('/sports')}>
-        <img src={Assets.SportsEvent_icon.png} />  Sports
+          Sports
         </div>
         <div className="box workshops" onClick={() => navigateTo('/workshop')}>
-        <img src={Assets.Workshop_icon.png} />  Workshops
+          Workshops
         </div>
         <div className="box job-fairs" onClick={() => navigateTo('/jobfair')} >
-        <img src={Assets.JobFair_icon.png} />
+        <img />
         Job Fair
         </div>
-      </div>
+      </div><br></br><br></br><br></br>
       <Footer />
     </>
   )

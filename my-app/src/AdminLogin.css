@@ -7,8 +7,8 @@
   background-size: cover;
 }
 
-.login-form {
-  background: #fff;
+.login-container {
+  background: #fefdfd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
@@ -21,17 +21,17 @@
   margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  color: #333;
+  color: #fefbfb;
 }
 
 .login-form div {
   margin-bottom: 15px;
 }
 
-.login-form label {
+.input-group label {
   display: block;
   font-size: 14px;
-  color: #555;
+  color: #090101;
   margin-bottom: 5px;
 }
 

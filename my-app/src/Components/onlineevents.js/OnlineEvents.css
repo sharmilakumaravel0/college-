@@ -1,11 +1,15 @@
 /* General styling for the page */
 .f {
-  margin:0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background-image: url("https://www.baltana.com/files/wallpapers-2/Photography-HD-Wallpapers-05028.jpg");background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  margin: 0;
+    min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
+    font-family: Arial, sans-serif;
+    background-image: url("https://www.baltana.com/files/wallpapers-2/Photography-HD-Wallpapers-05028.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
 }
 
 .section {
@@ -21,7 +25,7 @@
    margin:20px auto;/* Center horizontally */
   position: relative;
   min-height: 500px;
-  width: 80%; /* Responsive width */
+  width: 100%; /* Responsive width */
   max-width: 600px; /* Maximum width */
   text-align: center;
 }
