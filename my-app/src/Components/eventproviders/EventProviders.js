@@ -36,14 +36,14 @@ const EventProvides = () => {
     {
       imgSrc: "https://iper.ac.in/wp-content/uploads/2024/02/1-6.jpg",
       alt: "Cultural",
-      title: "Cultural",
+      title: "Online",
       description: "Enjoy cultural performances and events.",
       onClick: () => navigate('/onlineevents')
     },
     {
       imgSrc: "https://www.knowafest.com/files/uploads/BROUCHER-2024032512.jpg",
       alt: "Seminars",
-      title: "Seminars",
+      title: "Job Fair",
       description: "Attend insightful seminars from industry experts.",
       onClick: () => navigate('/jobfair')
     },

@@ -1,4 +1,12 @@
+.cc{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
+  padding: 20px;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-blurred-gradient-background-in-bright-rainbow-colors-colorful-rainbow-gradient-image_15684346.jpg");background-repeat: no-repeat;
+  background-size: cover;
 
+}
 
 .college-list-container {
   padding: 20px;
@@ -115,6 +123,7 @@ footer {
 }
 .ii{
   text-align: center;
-  color:#f15e14
+  color:#f15e14;
+  font-size: 30px;
 
 }

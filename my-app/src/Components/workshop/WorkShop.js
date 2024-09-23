@@ -1,129 +1,182 @@
 import React, { useState } from 'react';
+import { FaArrowLeft, FaCode, FaChartBar, FaLock, FaPenNib, FaComments, FaChalkboardTeacher } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
-import QRCode from 'react-qr-code'; // Import QRCode component
+import myQRCode from '../Assets/myQRCode.jpg'; 
+import './WorkShop.css';
 
-
-
-function Workshops() {
-  const [activeSection, setActiveSection] = useState('main-menu');
+const Workshops = () => {
+  const [activeSection, setActiveSection] = useState('workshops-list');
   const [workshopTitle, setWorkshopTitle] = useState('');
-  const [paymentAmount, setPaymentAmount] = useState(null); // State to handle payment amount
-  const navigate = useNavigate(); // Hook for navigation
+  const [formData, setFormData] = useState({
+    collegeName: '',
+    studentName: '',
+    studentEmail: '',
+    phoneNumber: '',
+    participatingCollege: ''  // Added state for Participating College
+  });
+  const [paymentAmount, setPaymentAmount] = useState(null);
+  const [paymentCompleted, setPaymentCompleted] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
+  const navigate = useNavigate();
 
-  // List of colleges for the dropdown
-  const colleges = [
-    'Select your college',
-    'Indian Institute of Technology Madras (IIT Madras)',
-    'Anna University',
-    'Loyola College',
-    'Madras Christian College (MCC)',
-    'Presidency College',
-    'SRM Institute of Science and Technology',
-    'Sathyabama Institute of Science and Technology',
-    'Stella Maris College',
-    'Hindustan Institute of Technology and Science (HITS)',
-    'Vellore Institute of Technology (VIT)',
-    'Saveetha Institute of Medical and Technical Sciences'
+  const showWorkshopDetails = (workshopName, amount) => {
+    setWorkshopTitle(workshopName);
+    setPaymentAmount(amount);
+    setActiveSection('workshop-details');
+  };
+
+  const goBackToWorkshops = () => {
+    setActiveSection('workshops-list');
+  };
+
+  const goBackToMainMenu = () => {
+    navigate('/events');
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const simulatePaymentScan = () => {
+    setIsScanning(true);
+    setTimeout(() => {
+      const isPaid = window.confirm("Confirm that payment has been made via QR code.");
+      setIsScanning(false);
+      if (isPaid) {
+        setPaymentCompleted(true);
+        alert("Payment Successful!");
+      } else {
+        alert("Payment not completed. Please scan again.");
+      }
+    }, 2000);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/registration-summary', { 
+      state: { 
+        formData, 
+        eventTitle: workshopTitle, 
+        paymentCompleted 
+      } 
+    });
+    setFormData({
+      collegeName: '',
+      studentName: '',
+      studentEmail: '',
+      phoneNumber: '',
+      participatingCollege: ''  // Reset participatingCollege
+    });
+  };
+
+  const workshops = [
+    { name: 'Web Development', amount: 200, icon: <FaCode /> },
+    { name: 'Data Science', amount: 300, icon: <FaChartBar /> },
+    { name: 'Machine Learning', amount: 250, icon: <FaLock /> },
+    { name: 'Cybersecurity', amount: 150, icon: <FaLock /> },
+    { name: 'Creative Writing', amount: 100, icon: <FaPenNib /> },
+    { name: 'Public Speaking', amount: 120, icon: <FaComments /> },
+    { name: 'Leadership Skills', amount: 150, icon: <FaChalkboardTeacher /> },
   ];
 
-  // Function to show different sections based on the type
-  const showWorkshops = (type) => {
-    if (type === 'technical') {
-      setActiveSection('technical-workshops-list');
-    } else if (type === 'nonTechnical') {
-      setActiveSection('non-technical-workshops-list');
-    }
+  const eventDetailsData = {
+    'Web Development': { startDate: '2024-10-15', endDate: '2024-10-17' },
+    'Data Science': { startDate: '2024-10-18', endDate: '2024-10-20' },
+    'Machine Learning': { startDate: '2024-10-21', endDate: '2024-10-23' },
+    'Cybersecurity': { startDate: '2024-10-24', endDate: '2024-10-26' },
+    'Creative Writing': { startDate: '2024-10-27', endDate: '2024-10-29' },
+    'Public Speaking': { startDate: '2024-10-30', endDate: '2024-11-01' },
+    'Leadership Skills': { startDate: '2024-11-02', endDate: '2024-11-04' },
   };
-
-  // Function to show workshop details for the selected workshop
-  const showWorkshopDetails = (workshopName, amount) => {
-    setActiveSection('workshop-details');
-    setWorkshopTitle(workshopName);
-    setPaymentAmount(amount); // Set payment amount
-  };
-
-  // Function to navigate back to a previous section
-  const goBack = (sectionId) => {
-    setActiveSection(sectionId);
-  };
-
-  // Function to handle registration form submission
-  const submitRegistration = (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    
-    const formData = new FormData(event.target);
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-    
-    // Navigate to the registration summary page with form data and workshop title
-    navigate('/registration-summary', { state: { formData: data, eventTitle: workshopTitle } });
-  };
-
-  // Generate the booking URL
-  const bookingURL = `https://example.com/register?title=${encodeURIComponent(workshopTitle)}&amount=${paymentAmount}`;
 
   return (
-    <>
-    <div className='aa'>
+    <div className='qw'>
+      <div className='workshop-container'>
+        <div id="workshops-list" className={`section ${activeSection === 'workshops-list' ? 'active' : ''}`}>
+          <FaArrowLeft className="go-back-arrow" onClick={goBackToMainMenu} />
+          <h1>Workshops</h1>
+          {workshops.map(workshop => (
+            <div key={workshop.name} className="Workshop-event-box" onClick={() => showWorkshopDetails(workshop.name, workshop.amount)}>
+              <span className="event-icon">{workshop.icon}</span>
+              {workshop.name}
+            </div>
+          ))}
+        </div>
 
-      
-      {/* Main Menu */}
-      <div id="main-menu" className={`section ${activeSection === 'main-menu' ? 'active' : ''}`}>
-        <FaArrowLeft className="go-back-arrow" style={{ display: 'none' }} />
-        <h1>Select Workshop Category</h1>
-        <button onClick={() => showWorkshops('technical')}>Technical Workshops</button>
-        <button onClick={() => showWorkshops('nonTechnical')}>Non-Technical Workshops</button>
-      </div>
+        <div id="workshop-details" className={`section ${activeSection === 'workshop-details' ? 'active' : ''}`}>
+          <FaArrowLeft className="go-back-arrow" onClick={goBackToWorkshops} />
+          <h2>Register for {workshopTitle} Workshop</h2>
+          <p><strong>Start Date:</strong> {eventDetailsData[workshopTitle]?.startDate}</p>
+          <p><strong>End Date:</strong> {eventDetailsData[workshopTitle]?.endDate}</p>
+          <p><strong>Payment Amount:</strong> ₹{paymentAmount}</p>
 
-      {/* Technical Workshops List */}
-      <div id="technical-workshops-list" className={`section ${activeSection === 'technical-workshops-list' ? 'active' : ''}`}>
-        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('main-menu')} />
-        <h1>Technical Workshops</h1>
-        <button onClick={() => showWorkshopDetails('Web Development', 200)}>Web Development</button>
-        <button onClick={() => showWorkshopDetails('Data Science', 300)}>Data Science</button>
-        <button onClick={() => showWorkshopDetails('Machine Learning', 250)}>Machine Learning</button>
-        <button onClick={() => showWorkshopDetails('Cybersecurity', 150)}>Cybersecurity</button>
-      </div>
+          <div className="qr-code-container">
+            <img src={myQRCode} alt="QR Code" style={{ width: '128px', height: '128px' }} /><br></br>
+            <button className='in' onClick={simulatePaymentScan} disabled={isScanning}>
+              {isScanning ? 'Processing Payment...' : 'Scan to Confirm Payment'}
+            </button>
+          </div><br />
 
-      {/* Non-Technical Workshops List */}
-      <div id="non-technical-workshops-list" className={`section ${activeSection === 'non-technical-workshops-list' ? 'active' : ''}`}>
-        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('main-menu')} />
-        <h1>Non-Technical Workshops</h1>
-        <button onClick={() => showWorkshopDetails('Creative Writing', 100)}>Creative Writing</button>
-        <button onClick={() => showWorkshopDetails('Public Speaking', 120)}>Public Speaking</button>
-        <button onClick={() => showWorkshopDetails('Leadership Skills', 150)}>Leadership Skills</button>
-      </div>
+          <form id="registration-form" onSubmit={handleSubmit}>
+            <b><label htmlFor="student-name">Student Name:</label></b>
+            <input
+              type="text"
+              id="student-name"
+              name="studentName"
+              value={formData.studentName}
+              onChange={handleChange}
+              required
+            /><br /><br />
 
-      {/* Workshop Details and Registration */}
-      <div id="workshop-details" className={`section ${activeSection === 'workshop-details' ? 'active' : ''}`}>
-        <FaArrowLeft className="go-back-arrow" onClick={() => goBack('technical-workshops-list')} />
-        <h1 id="workshop-title">Register for {workshopTitle} Workshop</h1>
-        <p><strong>Start Date:</strong> October 15, 2024</p>
-        <p><strong>End Date:</strong> October 17, 2024</p>
-        <p><strong>Payment Amount:</strong> ₹{paymentAmount}</p>
+            <b><label htmlFor="student-email">Student Email:</label></b>
+            <input
+              type="email"
+              id="student-email"
+              name="studentEmail"
+              value={formData.studentEmail}
+              onChange={handleChange}
+              required
+            /><br /><br />
 
-        {/* QR Code for pre-booking */}
-        <div className="qr-code-container">
-          <QRCode value={bookingURL} size={128} />
-        </div><br />
+            <b><label htmlFor="phone-number">Phone Number:</label></b>
+            <input
+              type="text"
+              id="phone-number"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+            /><br /><br />
 
-        <div className="registration-container">
-          <form id="registration-form" onSubmit={submitRegistration}>
-            <label htmlFor="student-name">Student Name:</label>
-            <input type="text" id="student-name" name="studentName" required /><br /><br />
+            <b><label htmlFor="college-name">College Name:</label></b>
+            <select
+              id="college-name"
+              name="collegeName"
+              value={formData.collegeName}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select your college</option>
+              {['Indian Institute of Technology Madras (IIT Madras)', 'Anna University', 'Loyola College', 'Madras Christian College (MCC)', 'Presidency College', 'SRM Institute of Science and Technology', 'Sathyabama Institute of Science and Technology', 'Stella Maris College', 'Hindustan Institute of Technology and Science (HITS)', 'Vellore Institute of Technology (VIT)', 'Saveetha Institute of Medical and Technical Sciences'].map((college, index) => (
+                <option key={index} value={college}>{college}</option>
+              ))}
+            </select><br /><br />
 
-            <label htmlFor="student-email">Student Email:</label>
-            <input type="email" id="student-email" name="studentEmail" required /><br /><br />
-
-            <label htmlFor="phone-number">Phone Number:</label>
-            <input type="text" id="phone-number" name="phoneNumber" required /><br /><br />
-
-            <label htmlFor="college-name">College Name:</label>
-            <select id="college-name" name="collegeName" required>
-              {colleges.map((college, index) => (
+            {/* Participating College Field */}
+            <b><label htmlFor="participating-college">Participating College:</label></b>
+            <select
+              id="participating-college"
+              name="participatingCollege"
+              value={formData.participatingCollege}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select participating college</option>
+              {['IIT Madras', 'Anna University', 'VIT', 'SRM Institute', 'Presidency College','Loyola College', 'Madras Christian College (MCC)', 'Presidency College', 'SRM Institute of Science and Technology', 'Sathyabama Institute of Science and Technology', 'Stella Maris College', 'Hindustan Institute of Technology and Science (HITS)', 'Vellore Institute of Technology (VIT)', 'Saveetha Institute of Medical and Technical Sciences'].map((college, index) => (
                 <option key={index} value={college}>{college}</option>
               ))}
             </select><br /><br />
@@ -133,9 +186,7 @@ function Workshops() {
         </div>
       </div>
     </div>
-    
-    </>
   );
-}
+};
 
 export default Workshops;

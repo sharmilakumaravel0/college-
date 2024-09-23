@@ -1,100 +1,92 @@
-.vv{
+
+
+/* General styling for the Job Fair page */
+.gg {
+  margin: 0;
+  font-family: Arial, sans-serif;
   min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
   padding: 20px;
-    background-image: url("https://img.pikbest.com/backgrounds/20190701/summer-training-course-enrollment-hd-background_1896928.jpg!bw700");background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: 'Times New Roman', serif;
-    text-align: center;
-    padding: 20px;
-    
+  background-image: url("https://freedesignfile.com/upload/2019/12/Job-fair-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.jobfair-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffffc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  position: relative;
+  min-height: 500px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.jobfair-section.active {
+  display: flex;
+}
+
+/* Styling for each job category box */
+.jobfair-event-box {
+  background-color: #ff9d1d;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  padding-left: 60px; /* Space for the icon */
+}
+
+.jobfair-event-box .event-icon {
+  font-size: 20px;
+  color: #fff;
+  background-color: #1d2d3f; /* Circle background for icon */
+  border-radius: 100%;
+  padding: 8px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%); /* Center icon vertically */
+}
+
+.jobfair-event-box:hover {
+  background-color: #bb6a00;
+  transform: translateY(-5px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .section {
-    display: none;
-    
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    position: relative;
-    min-height: 300px;
-  }
-  
-  .section.active {
-    display: block;
-  }
-  
-  form input, form select {
-    padding: 8px;
-    width: 340px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form label {
-    display: inline-block;
-    width: 150px;
-    text-align: left;
-    font-size: 16px;
-  }
-  
-  form button {
-    margin-top: 5px;
-    background-color: #d10000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #a30202;
-  }
-  
-  .back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #4488d6;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  .back-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .registration-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 400px;
-    justify-content: space-between;
-    align-items: center;
-  }
+}
+
+/* Back arrow for navigation */
+.jobfair-go-back-arrow {
+  font-size: 24px;
+  cursor: pointer;
+  color: #1d2d3f;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.jobfair-go-back-arrow:hover {
+  color: #0056b3;
+}

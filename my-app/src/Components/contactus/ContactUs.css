@@ -1,121 +1,123 @@
-/* src/components/ContactUs/ContactUs.css */
 .BG {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden; /* Prevent scrollbars */
-    background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-blue-sky-picture-image_1113901.jpg");
-    background-size: cover;
-  }
-  
-  .container4 {
-    display: flex;
-    width: 300%;
-    max-width: 500px;
-    margin: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.3); /* Enhanced shadow */
-    overflow: hidden;
-    animation: slideIn 0.8s ease-out, bounceIn 1s ease-out; /* Slide-in and bounce-in animations */
-  }
-  
-  @keyframes slideIn {
-    from {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent scrollbars */
+  background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-blue-sky-picture-image_1113901.jpg");
+  background-size: cover;
+}
+
+.container4 {
+  display: flex;
+  width: 300%;
+  max-width: 500px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3); /* Enhanced shadow */
+  overflow: hidden;
+  animation: slideIn 0.8s ease-out, bounceIn 1s ease-out; /* Slide-in and bounce-in animations */
+}
+
+@keyframes slideIn {
+  from {
       transform: translateY(-50px);
       opacity: 0;
-    }
-    to {
+  }
+  to {
       transform: translateY(0);
       opacity: 1;
-    }
   }
-  
-  @keyframes bounceIn {
-    0% {
+}
+
+@keyframes bounceIn {
+  0% {
       transform: scale(0.9);
       opacity: 0;
-    }
-    60% {
+  }
+  60% {
       transform: scale(1.1);
       opacity: 1;
-    }
-    100% {
+  }
+  100% {
       transform: scale(1);
-    }
   }
-  
-  .contact-form {
-    flex: 1;
-    padding: 20px;
-    animation: bounceIn 1s ease-out;
-  }
-  
-  .contact-form h1 {
-    font-family: 'Roboto', sans-serif; /* Modern font family */
-    font-weight: 700; /* Bold font weight */
-    text-align: center;
-    color: #e74c3c; /* Red text color */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for better readability */
-    letter-spacing: 1px; /* Slight letter spacing for a more polished look */
-    margin: 0; /* Remove default margin */
-    padding-bottom: 15px; /* Space below heading */
-    border-bottom: 3px solid #e74c3c; /* Bottom border to add emphasis */
-    font-size: 1.5em; /* Larger font size for main heading */
-    text-transform: uppercase; /* Uppercase letters for emphasis */
-  }
-  
-  .contact-form label {
-    display: block;
-    margin: 15px 0 5px;
-    color: #555;
-    font-weight: 500;
-  }
-  
-  .contact-form input, .contact-form textarea {
-    width: calc(100% - 20px); /* Adjust width to fit padding */
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inner shadow */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
-  }
-  
-  .contact-form input:focus, .contact-form textarea:focus {
-    border-color: #e74c3c;
-    outline: none;
-    box-shadow: 0 0 8px rgba(231,76,60,0.5); /* Glow effect */
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .contact-form button {
-    background: linear-gradient(135deg, #e74c3c, #c0392b); /* Gradient button */
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 0 10px;
-    font-size: 16px;
-    transition: background 0.3s, transform 0.2s; /* Smooth button transitions */
-  }
-  
-  .contact-form button:hover {
-    background: linear-gradient(135deg, #c0392b, #a93226); /* Darker gradient on hover */
-    transform: translateY(-2px); /* Lift effect */
-  }
-  
-  .contact-form button:active {
-    background: linear-gradient(135deg, #a93226, #7d3c36); /* Even darker gradient on click */
-    transform: translateY(0); /* Reset position on click */
-  }
-  
+}
+
+.contact-form {
+  flex: 1;
+  padding: 20px;
+  /* animation: bounceIn 1s ease-out; */
+}
+
+.contact-form h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-weight: 700; /* Bold font weight */
+  text-align: center;
+  color: #e74c3c; /* Red text color */
+  text-shadow: 1px 1px 3px rgba(235, 30, 30, 0.3); /* Subtle shadow for better readability */
+  letter-spacing: 1px; /* Slight letter spacing for a more polished look */
+  margin: 0; /* Remove default margin */
+  padding-bottom: 15px; /* Space below heading */
+  border-bottom: 3px solid #e01212; /* Bottom border to add emphasis */
+  font-size: 1.5em; /* Larger font size for main heading */
+  text-transform: uppercase; /* Uppercase letters for emphasis */
+}
+
+.contact-form label {
+  display: block;
+  margin: 15px 0 5px;
+  color: #0c0c0c; /* Red color */
+  font-weight: 500;
+}
+
+.contact-form input, .contact-form textarea {
+  width: calc(100% - 20px); /* Adjust width to fit padding */
+  padding: 12px;
+  margin-bottom: 15px;
+  /* border: 2px solid #e74c3c; Red border */
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inner shadow */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  /* border-color: #e74c3c; */
+  outline: none;
+  box-shadow: 0 0 8px rgba(231,76,60,0.5); /* Glow effect */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form button {
+  background: #e74c3c; /* Red background */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s; /* Smooth button transitions */
+}
+
+.contact-form button:hover {
+  background: #c0392b; /* Darker red on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+.contact-form button:active {
+  background: #a93226; /* Even darker gradient on click */
+  transform: translateY(0); /* Reset position on click */
+}
+
+.error {
+  color: #e74c3c; /* Red color for error messages */
+}

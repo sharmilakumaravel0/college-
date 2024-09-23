@@ -29,7 +29,7 @@ const HeroSection = () => {
     return (
         <section id="home" style={heroStyle}>
             <div className="hero-content">
-                <h1>Welcome to College Events</h1>
+                <h1 className='vd'>Welcome to College Events</h1>
                 <p className='e'><i>Your gateway to exciting campus events and activities!</i></p>
                 <button
                     style={buttonStyle}

@@ -154,6 +154,8 @@ nav ul li:hover > ul {
   }
 
   .pp{
-    font-style:italic;
+    font-family:'Times New Roman', Times, serif;
+    text-align: left;
+    color:#ffcc00
   }
   

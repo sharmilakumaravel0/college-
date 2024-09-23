@@ -1,83 +1,111 @@
-/* src/App.css */
-.b  {
-  font-family: 'Times New Roman', serif;
-  text-align: center;
+.b {
+  margin: 0;
+  font-family: Arial, sans-serif;
   min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
   padding: 20px;
-  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/026/858/512/small_2x/of-a-colorful-assortment-of-sports-balls-on-a-white-background-with-copy-space-free-photo.jpg");background-repeat: no-repeat;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/026/858/512/small_2x/of-a-colorful-assortment-of-sports-balls-on-a-white-background-with-copy-space-free-photo.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #ecd716;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #d3d3d3;
-  transform: translateY(-5px);
+  background-position: center;
 }
 
 .section {
   display: none;
-  background-color: #ffffff;
-  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffffc;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin: 20px auto;
   position: relative;
-  min-height: 300px;
+  min-height: 500px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
 }
 
 .section.active {
-  display: block;
-}
-
-form input {
-  padding: 8px;
-  width: 200px;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-form label {
-  display: inline-block;
-  width: 150px;
-  text-align: left;
-  font-size: 16px;
-}
-
-form button {
-  margin-top: 5px;
-  background-color: #af0d0d;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-form button:hover {
-  background-color: #f39e16;
-}
-
-.goback-button {
-  position: fixed;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 16px;
-}
-
-.registration-container {
   display: flex;
-  flex-direction: column;
-  min-height: 400px;
-  justify-content: space-between;
+}
+.Sports-event-box {
+  background-color: #ecd716; /* Yellow background for event box */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: left; /* Left-align the text */
+  cursor: pointer;
+  display: flex; /* Flexbox for aligning icon and text */
+  align-items: center; /* Center items vertically */
+  position: relative;
+  padding-left: 60px; /* Space for the icon on the left */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Icon styles inside the event box */
+.Sports-event-box .icon-circle {
+  font-size: 20px;
+  color: #fff;
+  background-color: #1d2d3f; /* Dark background for the icon circle */
+  border-radius: 50%; /* Circular icon */
+  width: 30px; /* Increased size for the icon circle */
+  height: 30px; /* Increased size for the icon circle */
+  display: flex; /* Center the icon inside */
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px; /* Space between icon and text */
+  position: absolute;
+  left: 20px; /* Position the icon to the left */
+
+}
+
+
+/* Text inside the event box */
+.Sports-event-box .event-text {
+  font-size: 18px;
+  text-align: center; /* Center text within the box */
+  width: 100%; /* Make the text fill the remaining space */
+  display: inline-block; /* Align text with icon on the same line */
+  margin-left: px; /* Add some space between the icon and the text */
+}
+
+/* Hover effect for event box */
+.Sports-event-box:hover {
+  background-color: #d3d3d3;
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Button styling */
+.in {
+  padding: 10px 20px;
+  margin: 10px ; /* Ensure there is space between vertically stacked buttons */
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ecd716; /* Yellow background for buttons */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 250px; /* Set a fixed width to make all buttons uniform */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.in:hover {
+  background-color: #af9f0e; /* Slightly darker color on hover */
 }

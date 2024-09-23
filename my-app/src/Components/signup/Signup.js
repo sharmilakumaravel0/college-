@@ -50,6 +50,7 @@ const Signup = () => {
         </div>
         </div>
         </>
+        
     );
 };
 

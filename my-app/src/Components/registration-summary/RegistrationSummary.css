@@ -1,18 +1,58 @@
-/* src/Components/registration-summary/RegistrationSummary.css */
+/* Download section */
+.download-section {
+  position: relative;
+}
+
+.download-section .dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.download-btn {
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.download-btn:hover {
+  background-color: #d32f2f;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px; /* Adjust based on your button height */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown-menu li:active {
+  background-color: #e0e0e0;
+}
+
+/* Registration Summary Styling */
 .registration-summary {
   padding: 20px;
-}
-
-.registration-summary h1 {
-  text-align: center; /* Center the main heading */
-  font-size: 24px;
-  margin-bottom: 10px; /* Add some space below the heading */
-}
-
-.registration-summary h2 {
-  text-align: center; /* Center the subheading as well */
-  font-size: 20px;
-  margin-bottom: 20px; /* Space below the subheading */
+  text-align: center;
 }
 
 .registration-summary table {
@@ -21,43 +61,15 @@
   margin-top: 20px;
 }
 
-.registration-summary table, th, td {
-  border: 1px solid rgb(249, 239, 239);
-}
-
 .registration-summary th, td {
+  border: 1px solid #ccc;
   padding: 10px;
-  text-align: left;
 }
 
 .registration-summary th {
   background-color: #f2f2f2;
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  position: relative;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
+.registration-summary td {
+  background-color: #fff;
 }

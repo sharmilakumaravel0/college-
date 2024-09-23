@@ -37,11 +37,13 @@ import EventProvides from './Components/eventproviders/EventProviders';
 import Registration from './Components/register/Registration';
 import "./Auth.css"
 
-import AdminLogin from './AdminLogin';
+// import AdminLogin from './AdminLogin';
 import AdminDashboard from './Components/AdminDashboard'; // Correct for default export
 import Technical from './Components/technical/Technical'; // Correct for default export
 
 import "./Components/technical/Technical.css"
+// import AdminRegister from './Components/AdminRegister';
+import "./Components/nontech/NonTechEvents.css"
 
 
 
@@ -50,21 +52,19 @@ import "./Components/technical/Technical.css"
 
 
 function App() {
-  const isAuthenticated = localStorage.getItem('token'); // Check if the user is authenticated
+  
 
   return (
     <>
     <Router>
      <Header/>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}/
+        
         <Route path="/" element={<EventProvides />} />
-        <Route path="/adminlogin" element={<AdminLogin />} /> {/* Admin login page */}
-          
-          {/* Protected Admin Dashboard route */}
-          <Route 
-            path="/admin/dashboard" 
-            element={isAuthenticated ? <AdminDashboard/> : <Navigate to="/admin/login" />} />
+        {/* <Route path="/admin-register" element={<AdminRegister />} />
+        <Route path="/admin-login" element={<AdminLogin />} /> */}
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contactus" element={<ContactUs />} />

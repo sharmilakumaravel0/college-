@@ -1,49 +1,38 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import "./AdminLogin.css"
+// import React, { useState } from 'react';
+// import axios from 'axios';
 
-const AdminLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+// const AdminLogin = () => {
+//   const [formData, setFormData] = useState({
+//     email: '',
+//     password: '',
+//   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/admin/login', { email, password });
-      if (response.data.success) {
-        localStorage.setItem('adminToken', response.data.token); // Store token for authentication
-        
-      } else {
-        alert(response.data.message || 'Login Failed');
-      }
-    } catch (error) {
-      console.error('Login Error:', error);
-      alert('Error logging in');
-    }
-  };
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
 
-  return (
-    <>
-    <div className='a'>
-    <div className="login-container">
-      <h2>Admin Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>Email</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <div className="input-group">
-          <label>Password</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-    </div>
-    </>
-  );
-};
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await axios.post('http://localhost:3002/login', formData);
+//       localStorage.setItem('adminToken', response.data.token);
+//       alert(response.data.message);
+//       window.location.href = '/admin-dashboard'; // Redirect to dashboard
+//     } catch (error) {
+//       alert('Login failed');
+//     }
+//   };
 
-export default AdminLogin;
+//   return (
+//     <div>
+//       <h2>Admin Login</h2>
+//       <form onSubmit={handleSubmit}>
+//         <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+//         <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+//         <button type="submit">Login</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default AdminLogin;

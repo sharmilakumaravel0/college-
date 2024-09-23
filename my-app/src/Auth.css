@@ -1,7 +1,8 @@
 .rr {
     margin: 0;
-    padding: 0;
-    height: 100vh; /* Full height for the background */
+  font-family: Arial, sans-serif;
+  min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
+  padding: 20px; /* Full height for the background */
     background-image: url('https://png.pngtree.com/background/20210709/original/pngtree-school-season-welcome-new-students-blackboard-hand-painted-picture-image_923676.jpg'); /* Replace with your image URL */
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the image */
@@ -35,6 +36,7 @@
     display: block;
     margin: 10px 0 5px;
     font-weight: bold; 
+    text-align: left;
     color: #555; 
 }
 
@@ -44,6 +46,7 @@
     margin-bottom: 15px; 
     border: 1px solid #ddd; 
     border-radius: 6px; 
+    
     font-size: 16px; 
     transition: border-color 0.3s; 
 }

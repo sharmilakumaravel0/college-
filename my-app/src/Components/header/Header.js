@@ -41,7 +41,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="side-menu">
           <ul>
-            <li><Link to="/adminlogin" onClick={handleLinkClick}>AdminLogin</Link></li>
+           
             <li><Link to="/admin/dashboard" onClick={handleLinkClick}>AdminDashboard</Link></li>
           </ul>
         </div>

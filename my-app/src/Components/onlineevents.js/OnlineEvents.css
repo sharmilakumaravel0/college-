@@ -1,104 +1,89 @@
+
+
 /* General styling for the page */
 .f {
   margin: 0;
-    min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
-    font-family: Arial, sans-serif;
-    background-image: url("https://www.baltana.com/files/wallpapers-2/Photography-HD-Wallpapers-05028.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
-}
-
-.section {
-  
-  display: none;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  background-color: #fffffc;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   margin:20px auto;/* Center horizontally */
-  position: relative;
-  min-height: 500px;
-  width: 100%; /* Responsive width */
-  max-width: 600px; /* Maximum width */
-  text-align: center;
-}
-
-.section.active {
-  display: flex; /* Changed to flex for vertical centering */
-}
-
-.event-box {
-  background-color: #ecd716;
-  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  min-height: 100vh; /* Ensure the minimum height covers the full viewport height */
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 100%; /* Full width within the section */
-  max-width: 300px; /* Medium size */
-  text-align: center;
-  cursor: pointer;
-  display: inline-block; /* Center alignment */
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Start from a lower position */
-  animation: fadeInUp 0.5s forwards; /* Animation */
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG9ubGluZSUyMGV2ZW50fGVufDB8fDB8fHww");background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
-.event-box:nth-child(1) {
-  animation-delay: 0.1s; /* Delay for first box */
-}
-
-.event-box:nth-child(2) {
-  animation-delay: 0.2s; /* Delay for second box */
-}
-
-.event-box:nth-child(3) {
-  animation-delay: 0.3s; /* Delay for third box */
-}
-
-.event-box:nth-child(4) {
-  animation-delay: 0.4s; /* Delay for fourth box */
-}
-
-.event-box:nth-child(5) {
-  animation-delay: 0.5s; /* Delay for fifth box */
-}
-
-.event-box:nth-child(6) {
-  animation-delay: 0.6s; /* Delay for sixth box */
-}
-
-.event-box:hover {
-  background-color: #d3d3d3;
-  transform: translateY(-5px); /* Slight lift effect on hover */
-}
-
-@keyframes fadeInUp {
-  to {
-      opacity: 1;
-      transform: translateY(0); /* Move to its final position */
+  
+  .section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffffc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    position: relative;
+    min-height: 500px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
   }
-}
-
-.go-back-arrow {
-  font-size: 24px;
-  cursor: pointer;
-  color: #1d2d3f;
-  position: absolute;
-  top: 10px; /* Position from the top */
-  left: 10px; /* Position from the left */
-}
-
-.go-back-arrow:hover {
-  color: #0056b3;
-}
-#event-details h2{
-  color:#a70a07
-}
+  
+  .section.active {
+    display: flex;
+  }
+  
+  .Online-event-box {
+    background-color:  #57f699;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    padding-left: 60px; /* Add space for the icon */
+  }
+  
+  .Online-event-box .event-icon {
+    font-size: 20px;
+    color: #fff;
+    background-color: #1d2d3f; /* Circle background color */
+    border-radius: 100%;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%); /* Center icon vertically */
+  }
+  
+  .Online-event-box:hover {
+    background-color:  #069542;
+    transform: translateY(-5px);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .go-back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+    color: #1d2d3f;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .go-back-arrow:hover {
+    color: #0056b3;
+  }

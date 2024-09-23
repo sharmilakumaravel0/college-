@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser'); // Add this line
+const  Registration = require('./models/Registration')
+
 
 
 const connectDB = require('./config/db'); // Adjust based on your folder structure
@@ -22,6 +24,18 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 connectDB();
+
+
+app.get('/registrations', async (req, res) => {
+    try {
+        const registrations = await Registration.find();
+        res.json(registrations);
+    } catch (error) {
+        console.error('Error fetching registrations:', error);
+        res.status(500).json({ success: false, message: 'Error fetching registrations' });
+    }
+});
+
 
 const transporter = nodemailer.createTransport({
     service: 'gmail', // or another service
